@@ -4,19 +4,19 @@ import java.util.Date;
 
 public class User {
     private int id;
-    private String name;
+    private String lastName;
     private String firstName;
     private String sexe;
-    private Date birthDay;
+    private String birthDay;
     private String phoneNumber;
     private String address;
     private String email;
     private String password;
 
 
-    public User(int id, String name, String firstName, String sexe, Date birthDay, String phoneNumber, String address, String email, String password) {
+    public User(String lastName, String firstName, String sexe, String birthDay, String phoneNumber, String address, String email, String password) {
         this.id = id;
-        this.name = name;
+        this.lastName = lastName;
         this.firstName = firstName;
         this.sexe = sexe;
         this.birthDay = birthDay;
@@ -24,6 +24,20 @@ public class User {
         this.address = address;
         this.email = email;
         this.password = password;
+    }
+
+    public String toStrings() {
+        return "User{" +
+                "id=" + id +
+                ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", sexe='" + sexe + '\'' +
+                ", birthDay='" + birthDay + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 
     public int getId() {
@@ -34,12 +48,12 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getFirstName() {
@@ -58,11 +72,11 @@ public class User {
         this.sexe = sexe;
     }
 
-    public Date getBirthDay() {
+    public String getBirthDay() {
         return birthDay;
     }
 
-    public void setBirthDay(Date birthDay) {
+    public void setBirthDay(String birthDay) {
         this.birthDay = birthDay;
     }
 
