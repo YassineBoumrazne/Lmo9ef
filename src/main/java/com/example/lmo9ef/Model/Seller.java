@@ -7,8 +7,8 @@ public class Seller extends User {
     private float price;
     private String experience;
 
-    public Seller(int id, String name, String firstName, String sexe, Date birthDay, String phoneNumber, String address, String email, String password, String jobTitle, float price, String experience) {
-        super(id, name, firstName, sexe, birthDay, phoneNumber, address, email, password);
+    public Seller(int id, String name, String firstName, String sexe, String birthDay, String phoneNumber, String address, String email, String password, String jobTitle, float price, String experience) {
+        super(name, firstName, sexe, birthDay, phoneNumber, address, email, password);
         this.jobTitle = jobTitle;
         this.price = price;
         this.experience = experience;
