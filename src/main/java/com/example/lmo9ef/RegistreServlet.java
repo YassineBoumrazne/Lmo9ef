@@ -8,8 +8,11 @@ import java.sql.SQLException;
 
 import com.example.lmo9ef.Model.Client;
 import com.example.lmo9ef.Repository.AuthRepositroy;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "registreServlet", value = "/register")
 public class RegistreServlet extends HttpServlet {

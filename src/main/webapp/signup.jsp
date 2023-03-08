@@ -7,309 +7,454 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="An impressive and flawless site template that includes various UI elements and countless features, attractive ready-made blocks and rich pages, basically everything you need to create a unique and professional website.">
-    <meta name="keywords" content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
-    <meta name="author" content="elemis">
-    <title>Lmo9ef - Modern & Multipurpose Bootstrap 5 Template</title>
-    <link rel="shortcut icon" href="./assets/img/favicon.png">
-    <link rel="stylesheet" href="./assets/css/plugins.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Finate - Job Portal Website Template Using Bootstrap 5"/>
+    <meta name="keywords" content="accessories, digital products, electronic html, modern, products, responsive"/>
+    <meta name="author" content="hastech"/>
+
+    <title>Registration :: Finate - Job Portal Website Template Using Bootstrap 5</title>
+
+    <!--== Favicon ==-->
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+
+    <!--== Google Fonts ==-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+
+    <!--== Bootstrap CSS ==-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!--== Icofont Icon CSS ==-->
+    <link href="assets/css/icofont.css" rel="stylesheet" />
+    <!--== Swiper CSS ==-->
+    <link href="assets/css/swiper.min.css" rel="stylesheet" />
+    <!--== Fancybox Min CSS ==-->
+    <link href="assets/css/fancybox.min.css" rel="stylesheet" />
+    <!--== Aos Min CSS ==-->
+    <link href="assets/css/aos.min.css" rel="stylesheet" />
+
+    <!--== Main Style CSS ==-->
+    <link href="assets/css/style.css" rel="stylesheet" />
 </head>
 
 <body>
-<div class="content-wrapper">
-    <header class="wrapper bg-soft-primary">
-        <nav class="navbar navbar-expand-lg center-nav transparent position-absolute navbar-light">
-            <div class="container flex-lg-row flex-nowrap align-items-center">
-                <div class="navbar-brand w-100">
-                    <a href="./index.jsp">
-                        <img src="./assets/img/logo.png" srcset="./assets/img/logo@2x.png 2x" alt="" />
-                    </a>
-                </div>
-                <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
-                    <div class="offcanvas-header d-lg-none">
-                        <h3 class="text-white fs-30 mb-0">Lmo9ef</h3>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
-                        <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown dropdown-submenu dropend"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
-                                        <ul class="dropdown-menu">
-                                            <li class="nav-item"><a class="dropdown-item" href="./services.jsp">Services I</a></li>
-                                            <li class="nav-item"><a class="dropdown-item" href="./services2.jsp">Services II</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown dropdown-submenu dropend"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">About</a>
-                                        <ul class="dropdown-menu">
-                                            <li class="nav-item"><a class="dropdown-item" href="./about.jsp">About I</a></li>
-                                            <li class="nav-item"><a class="dropdown-item" href="./about2.jsp">About II</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown dropdown-submenu dropend"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Shop</a>
-                                        <ul class="dropdown-menu">
-                                            <li class="nav-item"><a class="dropdown-item" href="./shop.jsp">Shop I</a></li>
-                                            <li class="nav-item"><a class="dropdown-item" href="./shop2.jsp">Shop II</a></li>
-                                            <li class="nav-item"><a class="dropdown-item" href="./shop-product.jsp">Product Page</a></li>
-                                            <li class="nav-item"><a class="dropdown-item" href="./shop-cart.jsp">Shopping Cart</a></li>
-                                            <li class="nav-item"><a class="dropdown-item" href="./shop-checkout.jsp">Checkout</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown dropdown-submenu dropend"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Contact</a>
-                                        <ul class="dropdown-menu">
-                                            <li class="nav-item"><a class="dropdown-item" href="./contact.jsp">Contact I</a></li>
-                                            <li class="nav-item"><a class="dropdown-item" href="./contact2.jsp">Contact II</a></li>
-                                            <li class="nav-item"><a class="dropdown-item" href="./contact3.jsp">Contact III</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown dropdown-submenu dropend"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Career</a>
-                                        <ul class="dropdown-menu">
-                                            <li class="nav-item"><a class="dropdown-item" href="./career.jsp">Job Listing I</a></li>
-                                            <li class="nav-item"><a class="dropdown-item" href="./career2.jsp">Job Listing II</a></li>
-                                            <li class="nav-item"><a class="dropdown-item" href="./career-job.jsp">Job Description</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown dropdown-submenu dropend"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Utility</a>
-                                        <ul class="dropdown-menu">
-                                            <li class="nav-item"><a class="dropdown-item" href="./404.jsp">404 Not Found</a></li>
-                                            <li class="nav-item"><a class="dropdown-item" href="./page-loader.jsp">Page Loader</a></li>
-                                            <li class="nav-item"><a class="dropdown-item" href="./signin.jsp">Sign In I</a></li>
-                                            <li class="nav-item"><a class="dropdown-item" href="./signin2.jsp">Sign In II</a></li>
-                                            <li class="nav-item"><a class="dropdown-item" href="./signup.jsp">Sign Up I</a></li>
-                                            <li class="nav-item"><a class="dropdown-item" href="./signup2.jsp">Sign Up II</a></li>
-                                            <li class="nav-item"><a class="dropdown-item" href="./terms.jsp">Terms</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item"><a class="dropdown-item" href="./pricing.jsp">Pricing</a></li>
-                                    <li class="nav-item"><a class="dropdown-item" href="./onepage.jsp">One Page</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- /.navbar-nav -->
-                        <div class="offcanvas-footer d-lg-none">
-                            <div>
-                                <a href="/cdn-cgi/l/email-protection#07616e757473296b66747347626a666e6b2964686a" class="link-inverse"><span class="__cf_email__" data-cfemail="d5bcbbb3ba95b0b8b4bcb9fbb6bab8">[email&#160;protected]</span></a>
-                                <br /> 00 (123) 456 78 90 <br />
-                                <nav class="nav social social-white mt-4">
-                                    <a href="#"><i class="uil uil-twitter"></i></a>
-                                    <a href="#"><i class="uil uil-facebook-f"></i></a>
-                                    <a href="#"><i class="uil uil-dribbble"></i></a>
-                                    <a href="#"><i class="uil uil-instagram"></i></a>
-                                    <a href="#"><i class="uil uil-youtube"></i></a>
-                                </nav>
-                                <!-- /.social -->
+
+<!--wrapper start-->
+<div class="wrapper">
+
+    <!--== Start Header Wrapper ==-->
+    <header class="header-area transparent">
+        <div class="container">
+            <div class="row no-gutter align-items-center position-relative">
+                <div class="col-12">
+                    <div class="header-align">
+                        <div class="header-align-start">
+                            <div class="header-logo-area">
+                                <a href="index.html">
+                                    <img class="logo-main" src="assets/img/logo-light.png" alt="Logo" />
+                                    <img class="logo-light" src="assets/img/logo-light.png" alt="Logo" />
+                                </a>
                             </div>
                         </div>
-                        <!-- /.offcanvas-footer -->
+                        <div class="header-align-center">
+                            <div class="header-navigation-area position-relative">
+                                <ul class="main-menu nav">
+                                    <li><a href="index.html"><span>Accueil</span></a></li>
+                                    <li class="has-submenu"><a href="#/"><span>Trouver un Maalam</span></a>
+                                        <ul class="submenu-nav">
+                                            <li><a href="job.html"><span>Maalams</span></a></li>
+                                            <li><a href="job-details.html"><span>Détails de l'Maalam</span></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="employers-details.html"><span>Détails des employeurs</span></a></li>
+                                    <li class="has-submenu"><a href="#/"><span>Candidats</span></a>
+                                        <ul class="submenu-nav">
+                                            <li><a href="candidate.html"><span>Candidats</span></a></li>
+                                            <li><a href="candidate-details.html"><span>Détails du candidat</span></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu"><a href="#/"><span>Pages</span></a>
+                                        <ul class="submenu-nav">
+                                            <li><a href="about-us.html"><span>À propos de nous</span></a></li>
+                                            <li><a href="signin.jsp"><span>Connexion</span></a></li>
+                                            <li><a href="signup.jsp"><span>Inscription</span></a></li>
+                                            <li><a href="page-not-found.html"><span>Page non trouvée</span></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.html"><span>Contact</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="header-align-end">
+                            <div class="header-action-area">
+                                <a class="btn-registration" href="signup.jsp"><span>+</span> Inscription</a>
+                                <button class="btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
+                                    <i class="icofont-navigation-menu"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <!-- /.offcanvas-body -->
-                </div>
-                <!-- /.navbar-collapse -->
-                <div class="navbar-other w-100 d-flex ms-auto">
-                    <ul class="navbar-nav flex-row align-items-center ms-auto">
-                        <li class="nav-item dropdown language-select text-uppercase">
-                            <a class="nav-link dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fr</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="dropdown-item" href="#">Fr</a></li>
-                                <li class="nav-item"><a class="dropdown-item" href="#">En</a></li>
-                                <li class="nav-item"><a class="dropdown-item" href="#">Ar</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item d-none d-md-block">
-                            <a href="./signin.jsp" class="btn btn-sm btn-primary rounded-pill">S'identifier</a>
-                        </li>
-                        <li class="nav-item d-lg-none">
-                            <button class="hamburger offcanvas-nav-btn"><span></span></button>
-                        </li>
-                    </ul>
-                    <!-- /.navbar-nav -->
-                </div>
-                <!-- /.navbar-other -->
-            </div>
-            <!-- /.container -->
-        </nav>
-        <!-- /.navbar -->
     </header>
-    <!-- /header -->
-    <section class="wrapper image-wrapper bg-image bg-overlay bg-overlay-light-600 text-white" data-image-src="./assets/img/photos/bg18.png">
-        <div class="container pt-17 pb-20 pt-md-19 pb-md-21 text-center">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h1 class="display-1 mb-3">S'inscrire</h1>
-                    <nav class="d-inline-block" aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Accueil</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">S'inscrire</li>
-                        </ol>
-                    </nav>
-                    <!-- /nav -->
-                </div>
-                <!-- /column -->
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-    </section>
-    <!-- /section -->
-    <section class="wrapper bg-light">
-        <div class="container pb-14 pb-md-16">
-            <div class="row">
-                <div class="col-lg-7 col-xl-6 col-xxl-5 mx-auto mt-n20">
-                    <div class="card">
-                        <div class="card-body p-11 text-center">
-                            <h2 class="mb-3 text-start">S'inscrire a Lmo9ef</h2>
-                            <p class="lead mb-6 text-start">L'inscription prend moins d'une minute.</p>
-                            <form method="post" action="register" class="text-start mb-3">
-                                <div class="form-floating mb-4">
-                                    <%--@declare id="loginname"--%><input type="text" class="form-control" placeholder="Nom" id="Nom" name="Nom">
-                                    <label for="loginName">Nom</label>
-                                </div>
-                                <div class="form-floating mb-4">
-                                    <input type="text" class="form-control" placeholder="Prenom" id="Prenom" name="Prenom">
-                                    <label for="loginName">Prenom</label>
-                                </div>
-                                <div class="form-select-wrapper mb-4">
-                                    <select class="form-select" aria-label="Default select example" name="Sexe" id="Sexe">
-                                        <option selected>Sexe</option>
-                                        <option value="M">M</option>
-                                        <option value="F">F</option>
-                                    </select>
-                                </div>
-                                <div class="form-floating mb-4">
-                                    <%--@declare id="loginnumtelephone"--%><input type="number" class="form-control" placeholder="Numéro de Téléphone" id="NumTelephone" name="NumTelephone">
-                                    <label for="loginNumTelephone">Numéro de Téléphone</label>
-                                </div>
-                                <div class="form-floating mb-4">
-                                    <%--@declare id="logindatedenaissance"--%><input type="date" class="form-control" placeholder="Numéro de Téléphone" id="DateDeNaissance" name="DateDeNaissance">
-                                    <label for="loginDateDeNaissance">Date de Naissance</label>
-                                </div>
-                                <div class="form-floating mb-4">
-                                    <%--@declare id="loginaddresse"--%><input type="text" class="form-control" placeholder="Email" id="Addresse" name="Addresse">
-                                    <label for="loginAddresse">Addresse</label>
-                                </div>
-                                <div class="form-floating mb-4">
-                                    <%--@declare id="loginemail"--%><input type="email" class="form-control" placeholder="Email" id="Email" name="Email">
-                                    <label for="loginEmail">Email</label>
-                                </div>
-                                <div class="form-floating password-field mb-4">
-                                    <%--@declare id="loginpassword"--%><input type="password" class="form-control" placeholder="Password" id="Password" name="Password">
-                                    <span class="password-toggle"><i class="uil uil-eye"></i></span>
-                                    <label for="loginPassword">Password</label>
-                                </div>
+    <!--== End Header Wrapper ==-->
 
-                                <input type="submit" value="S'inscrire" class="btn btn-primary rounded-pill btn-login w-100 mb-2 ">
-                            </form>
-                            <!-- /form -->
-                            <p class="mb-0">Vous avez déjà un compte? <a href="./signin.jsp" class="hover">S'identifier</a></p>
-                            <div class="divider-icon my-4">or</div>
-                            <nav class="nav social justify-content-center text-center">
-                                <a href="#" class="btn btn-circle btn-sm btn-google"><i class="uil uil-google"></i></a>
-                                <a href="#" class="btn btn-circle btn-sm btn-facebook-f"><i class="uil uil-facebook-f"></i></a>
-                                <a href="#" class="btn btn-circle btn-sm btn-twitter"><i class="uil uil-twitter"></i></a>
+    <main class="main-content">
+        <!--== Start Page Header Area Wrapper ==-->
+        <div class="page-header-area sec-overlay sec-overlay-black" data-bg-img="assets/img/photos/bg2.jpg">
+            <div class="container pt--0 pb--0">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-header-content">
+                            <h2 class="title">Page d'inscription</h2>
+                            <nav class="breadcrumb-area">
+                                <ul class="breadcrumb justify-content-center">
+                                    <li><a href="index.html">Accueil</a></li>
+                                    <li class="breadcrumb-sep">//</li>
+                                    <li>Pages</li>
+                                </ul>
                             </nav>
-                            <!--/.social -->
                         </div>
-                        <!--/.card-body -->
                     </div>
-                    <!--/.card -->
                 </div>
-                <!-- /column -->
             </div>
-            <!-- /.row -->
         </div>
-        <!-- /.container -->
-    </section>
-    <!-- /section -->
-</div>
-<!-- /.content-wrapper -->
-<footer class="bg-dark text-inverse">
-    <div class="container py-13 py-md-15">
-        <div class="row gy-6 gy-lg-0">
-            <div class="col-md-4 col-lg-3">
-                <div class="widget">
-                    <img class="mb-4" src="./assets/img/logo-light.png" srcset="./assets/img/logo-light@2x.png 2x" alt="" />
-                    <p class="mb-4">© 2023 Lmo9ef. <br class="d-none d-lg-block" />All rights reserved.</p>
-                    <nav class="nav social social-white">
-                        <a href="#"><i class="uil uil-twitter"></i></a>
-                        <a href="#"><i class="uil uil-facebook-f"></i></a>
-                        <a href="#"><i class="uil uil-dribbble"></i></a>
-                        <a href="#"><i class="uil uil-instagram"></i></a>
-                        <a href="#"><i class="uil uil-youtube"></i></a>
-                    </nav>
-                    <!-- /.social -->
-                </div>
-                <!-- /.widget -->
-            </div>
-            <!-- /column -->
-            <div class="col-md-4 col-lg-3">
-                <div class="widget">
-                    <h4 class="widget-title text-white mb-3">Get in Touch</h4>
-                    <address class="pe-xl-15 pe-xxl-17">10, Lastah, Taroudant, Morocco</address>
-                    + (212) 625 154 585
-                </div>
-                <!-- /.widget -->
-            </div>
-            <!-- /column -->
-            <div class="col-md-4 col-lg-3">
-                <div class="widget">
-                    <h4 class="widget-title text-white mb-3">Learn More</h4>
-                    <ul class="list-unstyled  mb-0">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Our Story</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Terms of Use</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <!-- /.widget -->
-            </div>
-            <!-- /column -->
-            <div class="col-md-12 col-lg-3">
-                <div class="widget">
-                    <h4 class="widget-title text-white mb-3">Our Newsletter</h4>
-                    <p class="mb-5">Abonnez-vous à notre newsletter pour recevoir nos nouvelles et nos offres.</p>
-                    <div class="newsletter-wrapper">
-                        <!-- Begin Mailchimp Signup Form -->
-                        <div id="mc_embed_signup2">
-                            <form action="" method="post" id="mc-embedded-subscribe-form2" name="mc-embedded-subscribe-form" class="validate dark-fields" target="_blank" novalidate>
-                                <div id="mc_embed_signup_scroll2">
-                                    <div class="mc-field-group input-group form-floating">
-                                        <input type="email" value="" name="EMAIL" class="required email form-control" placeholder="Email Address" id="mce-EMAIL2">
-                                        <label for="mce-EMAIL2">Email Address</label>
-                                        <input type="submit" value="Join" name="subscribe" id="mc-embedded-subscribe2" class="btn btn-primary ">
-                                    </div>
-                                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ddc180777a163e0f9f66ee014_4b1bcfa0bc" tabindex="-1" value=""></div>
-                                    <div class="clear"></div>
+        <!--== End Page Header Area Wrapper ==-->
+
+        <!--== Start Login Area Wrapper ==-->
+        <section class="account-login-area">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-7 col-xl-12">
+                        <div class="login-register-form-wrap register-form-wrap">
+                            <div class="login-register-form">
+                                <div class="form-title">
+                                    <h4 class="title">S'inscrire Maintenant</h4>
                                 </div>
-                            </form>
+                                <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="candidate-tab" data-bs-toggle="pill" data-bs-target="#candidate" type="button" role="tab" aria-controls="candidate" aria-selected="true"><i class="icofont-businessman"></i> client</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="employer-tab" data-bs-toggle="pill" data-bs-target="#employer" type="button" role="tab" aria-controls="employer" aria-selected="false"><i class="icofont-bag-alt"></i>Maalam</button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="candidate" role="tabpanel" aria-labelledby="candidate-tab">
+                                        <form method="post" action="register" class="text-start mb-3">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="text" placeholder="Prénom" id="Prenom" name="Prenom" >
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="text" placeholder="Nom de famille"  id="Nom" name="Nom">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="tel" placeholder="Numéro de téléphone" id="NumTelephone" name="NumTelephone">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="text" placeholder="Adresse"  id="Addresse" name="Addresse">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="text" placeholder="Ville"  id="Ville" name="Ville">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="text" placeholder="Pays"  id="Pays" name="Pays">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <select class="form-control" name="Sexe" id="Sexe">
+                                                            <option value="M">Homme</option>
+                                                            <option value="F">Femme</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="date" id="DateDeNaissance" name="DateDeNaissance">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="email" placeholder="Email" id="Email" name="Email">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="password" placeholder="Mot de passe"  id="Password" name="Password">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <div class="remember-forgot-info">
+                                                            <div class="remember">
+                                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                                <label class="form-check-label" for="defaultCheck1">Accepter nos conditions générales.</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <input type="submit" value="S'inscrire" class="btn-theme">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane fade" id="employer" role="tabpanel" aria-labelledby="employer-tab">
+                                        <form action="#">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="text" placeholder="Prénom" id="PrenomMaalam" name="Prenom" >
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="text" placeholder="Nom de famille"  id="NomMaalam" name="Nom">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="tel" placeholder="Numéro de téléphone" id="NumTelephoneMaalam" name="NumTelephone">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="text" placeholder="Adresse"  id="AddresseMaalam" name="Addresse">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="text" placeholder="Ville"  id="VilleMaalam" name="Ville">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="text" placeholder="Pays"  id="PaysMaalam" name="Pays">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <select class="form-control" name="Sexe" id="SexeMaalam">
+                                                            <option value="M">Homme</option>
+                                                            <option value="F">Femme</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="date" id="DateDeNaissanceMaalam" name="DateDeNaissance">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="email" placeholder="Email" id="EmailMaalam" name="Email">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="password" placeholder="Mot de passe"  id="PasswordMaalam" name="Password">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <div class="remember-forgot-info">
+                                                            <div class="remember">
+                                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                                                <label class="form-check-label" for="defaultCheck2">Accepter nos conditions générales.</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <input type="submit" value="S'inscrire" class="btn-theme">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="login-register-form-info">
+                                    <p>Déjà un compte ? <a href="signin.jsp">Se connecter</a></p>
+                                </div>
+                            </div>
                         </div>
-                        <!--End mc_embed_signup-->
                     </div>
-                    <!-- /.newsletter-wrapper -->
                 </div>
-                <!-- /.widget -->
             </div>
-            <!-- /column -->
+        </section>
+        <!--== End Login Area Wrapper ==-->
+    </main>
+
+    <!--== Start Footer Area Wrapper ==-->
+    <footer class="footer-area">
+        <!--== Start Footer Main ==-->
+        <div class="footer-main">
+            <div class="container pt--0 pb--0">
+                <div class="row">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="widget-item widget-about">
+                            <div class="widget-logo-area">
+                                <a href="index.html">
+                                    <img class="logo-main" src="assets/img/logo-light-theme.png" alt="Logo" />
+                                </a>
+                            </div>
+                            <p class="desc">That necessitat ecommerce platform that optimi your store popularised the release</p>
+                            <div class="social-icons">
+                                <a href="https://www.facebook.com" target="_blank" rel="noopener"><i class="icofont-facebook"></i></a>
+                                <a href="https://www.skype.com" target="_blank" rel="noopener"><i class="icofont-skype"></i></a>
+                                <a href="https://twitter.com" target="_blank" rel="noopener"><i class="icofont-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="row">
+                            <div class="col-md-3 col-lg-3">
+                                <div class="widget-item nav-menu-item1">
+                                    <h4 class="widget-title">Entreprise</h4>
+                                    <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-1">Entreprise</h4>
+                                    <div id="widgetId-1" class="collapse widget-collapse-body">
+                                        <div class="collapse-body">
+                                            <div class="widget-menu-wrap">
+                                                <ul class="nav-menu">
+                                                    <li><a href="about-us.html">A propos de nous</a></li>
+                                                    <li><a href="about-us.html">Pourquoi</a></li>
+                                                    <li><a href="contact.html">Nous contacter</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-4">
+                                <div class="widget-item nav-menu-item2">
+                                    <h4 class="widget-title">Ressources</h4>
+                                    <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-2">Ressources</h4>
+                                    <div id="widgetId-2" class="collapse widget-collapse-body">
+                                        <div class="collapse-body">
+                                            <div class="widget-menu-wrap">
+                                                <ul class="nav-menu">
+                                                    <li><a href="account-login.html">Liens Rapides</a></li>
+                                                    <li><a href="job.html">Forfaits d'Maalam</a></li>
+                                                    <li><a href="job.html">Publier une nouvelle offre d'Maalam</a></li>
+                                                    <li><a href="job.html">Liste d'Maalams</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--== End Footer Main ==-->
+
+            <!--== Start Footer Bottom ==-->
+            <div class="footer-bottom">
+                <div class="container pt--0 pb--0">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="footer-bottom-content">
+                                <p class="copyright">© 2023 FPT. Made with <i class="icofont-heart"></i> by <a target="_blank" href="https://themeforest.net/user/codecarnival">AK,YB,AO,AE.</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--== End Footer Bottom ==-->
+    </footer>
+    <!--== End Footer Area Wrapper ==-->
+
+    <!--== Scroll Top Button ==-->
+    <div id="scroll-to-top" class="scroll-to-top"><span class="icofont-rounded-up"></span></div>
+
+    <!--== Start Aside Menu ==-->
+    <aside class="off-canvas-wrapper offcanvas offcanvas-start" tabindex="-1" id="AsideOffcanvasMenu" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h1 class="d-none" id="offcanvasExampleLabel">Menu de côté</h1>
+            <button class="btn-menu-close" data-bs-dismiss="offcanvas" aria-label="Fermer">menu <i class="icofont-simple-left"></i></button>
         </div>
-        <!--/.row -->
-    </div>
-    <!-- /.container -->
-</footer>
-<div class="progress-wrap">
-    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-    </svg>
+        <div class="offcanvas-body">
+            <!-- Mobile Menu Start -->
+            <div class="mobile-menu-items">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="#">Trouver des Maalams</a>
+                        <ul class="sub-menu">
+                            <li><a href="job.html">Maalams</a></li>
+                            <li><a href="job-details.html">Détails de l'Maalam</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="employers-details.html">Détails des employeurs</a></li>
+                    <li><a href="#">Candidats</a>
+                        <ul class="sub-menu">
+                            <li><a href="candidate.html">Candidats</a></li>
+                            <li><a href="candidate-details.html">Détails du candidat</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Pages</a>
+                        <ul class="sub-menu">
+                            <li><a href="about-us.html">À propos de nous</a></li>
+                            <li><a href="signin.jsp">Connexion</a></li>
+                            <li><a href="signup.jsp">Inscription</a></li>
+                            <li><a href="page-not-found.html">Page non trouvée</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Mobile Menu End -->
+        </div>
+    </aside>
+    <!--== End Aside Menu ==-->
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="./assets/js/plugins.js"></script>
-<script src="./assets/js/theme.js"></script>
+
+<!--=======================Javascript============================-->
+
+<!--=== jQuery Modernizr Min Js ===-->
+<script src="assets/js/modernizr.js"></script>
+<!--=== jQuery Min Js ===-->
+<script src="assets/js/jquery-main.js"></script>
+<!--=== jQuery Migration Min Js ===-->
+<script src="assets/js/jquery-migrate.js"></script>
+<!--=== jQuery Popper Min Js ===-->
+<script src="assets/js/popper.min.js"></script>
+<!--=== jQuery Bootstrap Min Js ===-->
+<script src="assets/js/bootstrap.min.js"></script>
+<!--=== jQuery Swiper Min Js ===-->
+<script src="assets/js/swiper.min.js"></script>
+<!--=== jQuery Fancybox Min Js ===-->
+<script src="assets/js/fancybox.min.js"></script>
+<!--=== jQuery Aos Min Js ===-->
+<script src="assets/js/aos.min.js"></script>
+<!--=== jQuery Counterup Min Js ===-->
+<script src="assets/js/counterup.js"></script>
+<!--=== jQuery Waypoint Js ===-->
+<script src="assets/js/waypoint.js"></script>
+
+<!--=== jQuery Custom Js ===-->
+<script src="assets/js/custom.js"></script>
+
 </body>
 
 </html>
