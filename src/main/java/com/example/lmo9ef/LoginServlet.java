@@ -2,13 +2,13 @@ package com.example.lmo9ef;
 
 import java.io.*;
 
-import com.example.lmo9ef.Model.Client;
 import com.example.lmo9ef.Repository.AuthRepositroy;
 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet(name = "loginServlet", value = "/login")
 public class LoginServlet extends HttpServlet {
@@ -27,11 +27,16 @@ public class LoginServlet extends HttpServlet {
         try {
             int i = authRepositroy.login(email, password);
             if(i == 1){
+                HttpSession session = request.getSession(true);
+                session.setAttribute("login", true);
                 out.println("Working...");
                 out.println("Client Login Successfuly...");
+                response.sendRedirect("index.jsp");
             }else if (i == 2){
+                HttpSession session = request.getSession(true);
+                session.setAttribute("login", true);
                 out.println("Working...");
-                out.println("Seller problem de registration...");
+                out.println("Seller Login Successfuly....");
             }else{
                 out.println("Working...");
                 out.println("problem de Login...");

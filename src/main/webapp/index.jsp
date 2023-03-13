@@ -93,6 +93,9 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
     </header>
     <!--== End Header Wrapper ==-->
 
@@ -504,7 +507,6 @@
                     </div>
                 </div>
             </div>
-</div>
 </section>
 <!--== End Recent Job Area Wrapper ==-->
 
@@ -1037,6 +1039,7 @@
             </div>
         </div>
         <!--== End Footer Bottom ==-->
+    </div>
 </footer>
 <!--== End Footer Area Wrapper ==-->
 

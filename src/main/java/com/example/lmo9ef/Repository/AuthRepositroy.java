@@ -1,6 +1,6 @@
 package com.example.lmo9ef.Repository;
 
-import com.example.lmo9ef.Model.Client;
+import com.example.lmo9ef.Model.Customer;
 import com.example.lmo9ef.Model.Seller;
 import com.example.lmo9ef.Repository.connectivity.ConnectionClass;
 
@@ -9,20 +9,20 @@ import java.sql.*;
 public class AuthRepositroy {
 
 
-    public int clientRegister(Client client){
+    public int customerRegister(Customer customer){
         ConnectionClass connectionClass = new ConnectionClass();
         Connection connection = connectionClass.getConnection();
         int i = 0;
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO client(Nom, Prenom, Sexe, DateDeNaissance, NumTelephone, Addresse, Email, Password) VALUES (?,?,?,?,?,?,?,?)");
-            preparedStatement.setString(1, client.getLastName());
-            preparedStatement.setString(2, client.getFirstName());
-            preparedStatement.setString(3, client.getSexe());
-            preparedStatement.setString(4, client.getBirthDay());
-            preparedStatement.setString(5, client.getPhoneNumber());
-            preparedStatement.setString(6, client.getAddress());
-            preparedStatement.setString(7, client.getEmail());
-            preparedStatement.setString(8, client.getPassword());
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Customer(Nom, Prenom, Sexe, DateDeNaissance, NumTelephone, Addresse, Email, Password) VALUES (?,?,?,?,?,?,?,?)");
+            preparedStatement.setString(1, customer.getLastName());
+            preparedStatement.setString(2, customer.getFirstName());
+            preparedStatement.setString(3, customer.getSexe());
+            preparedStatement.setString(4, customer.getBirthDay());
+            preparedStatement.setString(5, customer.getPhoneNumber());
+            preparedStatement.setString(6, customer.getAddress());
+            preparedStatement.setString(7, customer.getEmail());
+            preparedStatement.setString(8, customer.getPassword());
 
             i = preparedStatement.executeUpdate();
             connection.close();
@@ -48,7 +48,7 @@ public class AuthRepositroy {
             preparedStatement.setString(8, seller.getPassword());
             preparedStatement.setString(9, seller.getJobTitle());
             preparedStatement.setFloat(10, seller.getPrice());
-            preparedStatement.setString(11, seller.getExperience());
+            preparedStatement.setInt(11, seller.getExperience());
 
             i = preparedStatement.executeUpdate();
             connection.close();
@@ -65,7 +65,7 @@ public class AuthRepositroy {
         PreparedStatement preparedStatement;
         int i = 0;
         try {
-            preparedStatement = connection.prepareStatement("SELECT * FROM client WHERE email = ? and password = ?");
+            preparedStatement = connection.prepareStatement("SELECT * FROM Customer WHERE email = ? and password = ?");
             preparedStatement.setString(1, email);
             preparedStatement.setString(2, password);
 

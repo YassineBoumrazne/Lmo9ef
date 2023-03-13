@@ -13,9 +13,10 @@ public class User {
     private String email;
     private String password;
 
+    private String pay;
+    private String city;
 
-    public User(String lastName, String firstName, String sexe, String birthDay, String phoneNumber, String address, String email, String password) {
-        this.id = id;
+    public User(String lastName, String firstName, String sexe, String birthDay, String phoneNumber, String address, String email, String password, String pay, String city) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.sexe = sexe;
@@ -24,6 +25,24 @@ public class User {
         this.address = address;
         this.email = email;
         this.password = password;
+        this.pay = pay;
+        this.city = city;
+    }
+
+    public String getPay() {
+        return pay;
+    }
+
+    public void setPay(String pay) {
+        this.pay = pay;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String toStrings() {
