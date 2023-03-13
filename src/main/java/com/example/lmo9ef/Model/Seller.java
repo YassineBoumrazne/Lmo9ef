@@ -5,10 +5,10 @@ import java.util.Date;
 public class Seller extends User {
     private String jobTitle;
     private float price;
-    private String experience;
+    private int experience;
 
-    public Seller(int id, String name, String firstName, String sexe, String birthDay, String phoneNumber, String address, String email, String password, String jobTitle, float price, String experience) {
-        super(name, firstName, sexe, birthDay, phoneNumber, address, email, password);
+    public Seller(String lastName, String firstName, String sexe, String birthDay, String phoneNumber, String address, String email, String password, String pay, String city, String jobTitle, float price, int experience) {
+        super(lastName, firstName, sexe, birthDay, phoneNumber, address, email, password, pay, city);
         this.jobTitle = jobTitle;
         this.price = price;
         this.experience = experience;
@@ -30,11 +30,11 @@ public class Seller extends User {
         this.price = price;
     }
 
-    public String getExperience() {
+    public int getExperience() {
         return experience;
     }
 
-    public void setExperience(String experience) {
+    public void setExperience(int experience) {
         this.experience = experience;
     }
 }

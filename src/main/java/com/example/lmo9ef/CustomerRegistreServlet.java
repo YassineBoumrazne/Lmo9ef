@@ -1,12 +1,8 @@
 package com.example.lmo9ef;
 
 import java.io.*;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
-import com.example.lmo9ef.Model.Client;
+import com.example.lmo9ef.Model.Customer;
 import com.example.lmo9ef.Repository.AuthRepositroy;
 
 import jakarta.servlet.annotation.WebServlet;
@@ -14,8 +10,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "registreServlet", value = "/register")
-public class RegistreServlet extends HttpServlet {
+@WebServlet(name = "customerRegistreServlet", value = "/customerRegister")
+public class CustomerRegistreServlet extends HttpServlet {
     public void init() {
     }
 
@@ -23,13 +19,11 @@ public class RegistreServlet extends HttpServlet {
 
         AuthRepositroy authRepositroy = new AuthRepositroy();
 
-        Client client = new Client(request.getParameter("Nom"), request.getParameter("Prenom"), request.getParameter("Sexe"), request.getParameter("DateDeNaissance"), request.getParameter("NumTelephone"), request.getParameter("Addresse"), request.getParameter("Email"), request.getParameter("Password"));
+        Customer customer = new Customer(request.getParameter("Nom"), request.getParameter("Prenom"), request.getParameter("Sexe"), request.getParameter("DateDeNaissance"), request.getParameter("NumTelephone"), request.getParameter("Addresse"), request.getParameter("Email"), request.getParameter("Password"), request.getParameter("Pays"), request.getParameter("Ville"));
         PrintWriter out = response.getWriter();
-//        out.println("Working...");
-//        out.println(client.toStrings());
 
         try {
-            int i = authRepositroy.clientRegister(client);
+            int i = authRepositroy.customerRegister(customer);
             if(i == 1){
                 out.println("Working...");
                 out.println("Registred  Successfuly...");
