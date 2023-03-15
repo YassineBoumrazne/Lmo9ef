@@ -1,7 +1,5 @@
 package com.example.lmo9ef.Model;
 
-import java.util.Date;
-
 public class User {
     private int id;
     private String lastName;

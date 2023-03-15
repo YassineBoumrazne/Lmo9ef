@@ -18,7 +18,7 @@ public class AuthRepositroy {
             preparedStatement.setString(1, customer.getLastName());
             preparedStatement.setString(2, customer.getFirstName());
             preparedStatement.setString(3, customer.getSexe());
-            preparedStatement.setString(4, customer.getBirthDay());
+            preparedStatement.setString(4,   customer.getBirthDay());
             preparedStatement.setString(5, customer.getPhoneNumber());
             preparedStatement.setString(6, customer.getAddress());
             preparedStatement.setString(7, customer.getEmail());
@@ -41,7 +41,7 @@ public class AuthRepositroy {
             preparedStatement.setString(1, seller.getLastName());
             preparedStatement.setString(2, seller.getFirstName());
             preparedStatement.setString(3, seller.getSexe());
-            preparedStatement.setString(4, seller.getBirthDay());
+            preparedStatement.setString(4,  seller.getBirthDay());
             preparedStatement.setString(5, seller.getPhoneNumber());
             preparedStatement.setString(6, seller.getAddress());
             preparedStatement.setString(7, seller.getEmail());

@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -58,18 +61,18 @@
                         <div class="header-align-center">
                             <div class="header-navigation-area position-relative">
                                 <ul class="main-menu nav">
-                                    <li><a href="index.jsp"><span>Accueil</span></a></li>
+                                    <li><a href="index"><span>Accueil</span></a></li>
                                     <li class="has-submenu"><a href="#/"><span>Trouver un Maalam</span></a>
                                         <ul class="submenu-nav">
                                             <li><a href="job.html"><span>Maalams</span></a></li>
                                             <li><a href="job-details.html"><span>Détails de l'Maalam</span></a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="employers-details.html"><span>Détails des employeurs</span></a></li>
+                                    <li><a href="employers-details.jsp"><span>Détails des employeurs</span></a></li>
                                     <li class="has-submenu"><a href="#/"><span>Candidats</span></a>
                                         <ul class="submenu-nav">
                                             <li><a href="candidate.html"><span>Candidats</span></a></li>
-                                            <li><a href="candidate-details.html"><span>Détails du candidat</span></a></li>
+                                            <li><a href="candidate-details.jsp"><span>Détails du candidat</span></a></li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu"><a href="#/"><span>Pages</span></a>
@@ -340,171 +343,35 @@
                     </div>
                 </div>
                 <div class="row">
+                    <c:forEach var="seller" items="${recentSellers}">
                     <div class="col-md-6 col-lg-4">
                         <!--== Start Recent Job Item ==-->
-                        <div class="recent-job-item">
-                            <div class="company-info">
-                                <div class="logo">
-                                    <a href="company-details.html"><img src="assets/img/companies/1.jpg" width="75" height="75" alt="Image-HasTech"></a>
+                            <div class="recent-job-item">
+                                <div class="company-info">
+                                    <div class="logo">
+                                        <a href="<%=request.getContextPath()%>/JobDetails?id=<c:out value="${seller.id}"/>"><img src="<c:out value="${seller.imagePath}"/>" width="75" height="75" alt="Image-HasTech"></a>
+                                    </div>
+                                    <div class="content">
+                                        <h4 class="name"><a href="<%=request.getContextPath()%>/JobDetails?id=<c:out value="${seller.id}"/>"><c:out value="${seller.firstName}"/></a></h4>
+                                        <p class="address"><c:out value="${seller.ville}"/>, <c:out value="${seller.pays}"/></p>
+                                    </div>
                                 </div>
-                                <div class="content">
-                                    <h4 class="name"><a href="company-details.html">Omare Lamire</a></h4>
-                                    <p class="address">Casablanca, Maroc</p>
+                                <div class="main-content">
+                                    <h3 class="title"><a href="<%=request.getContextPath()%>/JobDetails?id=<c:out value="${seller.id}"/>"><c:out value="${seller.jobTitle}"/></a></h3>
+                                    <h5 class="work-type">Temps plein</h5>
+                                    <p class="desc"><c:out value="${seller.description}"/></p>
+                                </div>
+                                <div class="recent-job-info">
+                                    <div class="salary">
+                                        <h4><c:out value="${seller.price}"/></h4>
+                                        <p>/jour</p>
+                                    </div>
+                                    <a class="btn-theme btn-sm" href="<%=request.getContextPath()%>/JobDetails?id=<c:out value="${seller.id}"/>">Commander</a>
                                 </div>
                             </div>
-                            <div class="main-content">
-                                <h3 class="title"><a href="job-details.html">Plombier</a></h3>
-                                <h5 class="work-type">Temps plein</h5>
-                                <p class="desc">Expérience dans l'installation et la réparation des équipements sanitaires</p>
-                            </div>
-                            <div class="recent-job-info">
-                                <div class="salary">
-                                    <h4>150 Dhs</h4>
-                                    <p>/jour</p>
-                                </div>
-                                <a class="btn-theme btn-sm" href="job-details.html">Commander</a>
-                            </div>
-                        </div>
                         <!--== End Recent Job Item ==-->
                     </div>
-                    <div class="col-md-6 col-lg-4">
-                        <!--== Start Recent Job Item ==-->
-                        <div class="recent-job-item">
-                            <div class="company-info">
-                                <div class="logo">
-                                    <a href="company-details.html"><img src="assets/img/companies/1.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="name"><a href="company-details.html">Mustapha Readi</a></h4>
-                                    <p class="address">Casablanca, Maroc</p>
-                                </div>
-                            </div>
-                            <div class="main-content">
-                                <h3 class="title"><a href="job-details.html">Peinture</a></h3>
-                                <h5 class="work-type">Temps plein</h5>
-                                <p class="desc">Expérience dans le mélange et l'application de peintures et de revêtements de sols, ainsi que l'application de revêtements muraux.</p>
-                            </div>
-                            <div class="recent-job-info">
-                                <div class="salary">
-                                    <h4>200 Dhs</h4>
-                                    <p>/jour</p>
-                                </div>
-                                <a class="btn-theme btn-sm" href="job-details.html">Commander</a>
-                            </div>
-                        </div>
-                        <!--== End Recent Job Item ==-->
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <!--== Start Recent Job Item ==-->
-                        <div class="recent-job-item">
-                            <div class="company-info">
-                                <div class="logo">
-                                    <a href="company-details.html"><img src="assets/img/companies/2.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="name"><a href="company-details.html">Ahmed Mounir</a></h4>
-                                    <p class="address">Rabat, Maroc</p>
-                                </div>
-                            </div>
-                            <div class="main-content">
-                                <h3 class="title"><a href="job-details.html">Plomberie</a></h3>
-                                <h5 class="work-type">Temps plein</h5>
-                                <p class="desc">Capacité à travailler avec des outils divers et à résoudre des problèmes de plomberie complexes.</p>
-                            </div>
-                            <div class="recent-job-info">
-                                <div class="salary">
-                                    <h4>250 Dhs</h4>
-                                    <p>/jour</p>
-                                </div>
-                                <a class="btn-theme btn-sm" href="job-details.html">Commander</a>
-                            </div>
-                        </div>
-                        <!--== End Recent Job Item ==-->
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <!--== Start Recent Job Item ==-->
-                        <div class="recent-job-item">
-                            <div class="company-info">
-                                <div class="logo">
-                                    <a href="company-details.html"><img src="assets/img/companies/3.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="name"><a href="company-details.html">Mohammed El Amine</a></h4>
-                                    <p class="address">Fès, Maroc</p>
-                                </div>
-                            </div>
-                            <div class="main-content">
-                                <h3 class="title"><a href="job-details.html">Menuiserie</a></h3>
-                                <h5 class="work-type">Temps plein</h5>
-                                <p class="desc">Capacité à couper, façonner et assembler le bois pour construire et réparer des structures et des éléments.</p>
-                            </div>
-                            <div class="recent-job-info">
-                                <div class="salary">
-                                    <h4>180 Dhs</h4>
-                                    <p>/jour</p>
-                                </div>
-                                <a class="btn-theme btn-sm" href="job-details.html">Commander</a>
-                            </div>
-                        </div>
-                        <!--== End Recent Job Item ==-->
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <!--== Start Recent Job Item ==-->
-
-                        <div class="recent-job-item">
-                            <div class="company-info">
-                                <div class="logo">
-                                    <a href="company-details.html"><img src="assets/img/companies/1.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="name"><a href="company-details.html">Mohamed Electricien</a></h4>
-                                    <p class="address">Casablanca, Maroc</p>
-                                </div>
-                            </div>
-                            <div class="main-content">
-                                <h3 class="title"><a href="job-details.html">Électricité</a></h3>
-                                <h5 class="work-type">Temps plein</h5>
-                                <p class="desc">Expérience en tant qu'électricien avec une solide connaissance des codes et des normes de sécurité.</p>
-                            </div>
-                            <div class="recent-job-info">
-                                <div class="salary">
-                                    <h4>350 Dhs</h4>
-                                    <p>/jour</p>
-                                </div>
-                                <a class="btn-theme btn-sm" href="job-details.html">Commander</a>
-                            </div>
-                        </div>
-                        <!--== End Recent Job Item ==-->
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <!--== Start Recent Job Item ==-->
-
-                        <div class="recent-job-item">
-                            <div class="company-info">
-                                <div class="logo">
-                                    <a href="company-details.html"><img src="assets/img/companies/2.jpg" width="75" height="75" alt="Image-Mustapha Readi"></a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="name"><a href="company-details.html">Bahija laasri</a></h4>
-                                    <p class="address">Casablanca, Maroc</p>
-                                </div>
-                            </div>
-                            <div class="main-content">
-                                <h3 class="title"><a href="job-details.html">Nettoyage et Ménage</a></h3>
-                                <h5 class="work-type">Temps plein</h5>
-                                <p class="desc">Expérience dans le nettoyage des sols, des meubles et des surfaces. Compétences en cuisine et en repassage.</p>
-                            </div>
-                            <div class="recent-job-info">
-                                <div class="salary">
-                                    <h4>150 Dhs</h4>
-                                    <p>/jour</p>
-                                </div>
-                                <a class="btn-theme btn-sm" href="job-details.html">Commander</a>
-                            </div>
-                        </div>
-                        <!--== End Recent Job Item ==-->
-                    </div>
+                    </c:forEach>
                 </div>
             </div>
 </section>
@@ -604,110 +471,34 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6 col-lg-4 col-xl-3">
-                <!--== Start Team Item ==-->
-                <div class="team-item">
-                    <div class="thumb">
-                        <a href="candidate-details.html">
-                            <img src="assets/img/team/1.jpg" width="160" height="160" alt="Image-HasTech">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <h4 class="title"><a href="candidate-details.html">Mohammed Laghzizil</a></h4>
-                        <h5 class="sub-title">Plombier</h5>
-                        <div class="rating-box">
-                            <i class="icofont-star"></i>
-                            <i class="icofont-star"></i>
-                            <i class="icofont-star"></i>
-                            <i class="icofont-star"></i>
-                            <i class="icofont-star"></i>
+            <c:forEach var="seller" items="${bestSellers}">
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <!--== Start Team Item ==-->
+                    <div class="team-item">
+                        <div class="thumb">
+                            <a href="<%=request.getContextPath()%>/JobDetails?id=<c:out value="${seller.id}"/>">
+                                <img src="<c:out value="${seller.imagePath}"/>" width="160" height="160" alt="Image-HasTech">
+                            </a>
                         </div>
-                        <p class="desc">Mise en place de tuyauteries, dépannage et rénovation</p>
-                        <a class="btn-theme btn-white btn-sm" href="candidate-details.html">Voir le profile</a>
-                    </div>
-                    <div class="bookmark-icon"><img src="assets/img/icons/bookmark1.png" alt="Image-HasTech"></div>
-                    <div class="bookmark-icon-hover"><img src="assets/img/icons/bookmark2.png" alt="Image-HasTech"></div>
-                </div>
-                <!--== End Team Item ==-->
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3">
-                <!--== Start Team Item ==-->
-                <div class="team-item">
-                    <div class="thumb">
-                        <a href="candidate-details.html">
-                            <img src="assets/img/team/2.jpg" width="160" height="160" alt="Image-HasTech">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <h4 class="title"><a href="candidate-details.html">Hamza Serghini</a></h4>
-                        <h5 class="sub-title">Électricien</h5>
-                        <div class="rating-box">
-                            <i class="icofont-star"></i>
-                            <i class="icofont-star"></i>
-                            <i class="icofont-star"></i>
-                            <i class="icofont-star"></i>
-                            <i class="icofont-star"></i>
+                        <div class="content">
+                            <h4 class="title"><a href="<%=request.getContextPath()%>/JobDetails?id=<c:out value="${seller.id}"/>"><c:out value="${seller.firstName}"/> <c:out value="${seller.lastName}"/></a></h4>
+                            <h5 class="sub-title"><c:out value="${seller.jobTitle}"/></h5>
+                            <div class="rating-box">
+                                <i class="icofont-star"></i>
+                                <i class="icofont-star"></i>
+                                <i class="icofont-star"></i>
+                                <i class="icofont-star"></i>
+                                <i class="icofont-star"></i>
+                            </div>
+                            <p class="desc"><c:out value="${seller.description}"/></p>
+                            <a class="btn-theme btn-white btn-sm" href="<%=request.getContextPath()%>/JobDetails?id=<c:out value="${seller.id}"/>">Voir le profile</a>
                         </div>
-                        <p class="desc">Installation d'équipements électriques, réparation et maintenance</p>
-                        <a class="btn-theme btn-white btn-sm" href="candidate-details.html">Voir le profile</a>
+                        <div class="bookmark-icon"><img src="assets/img/icons/bookmark1.png" alt="Image-HasTech"></div>
+                        <div class="bookmark-icon-hover"><img src="assets/img/icons/bookmark2.png" alt="Image-HasTech"></div>
                     </div>
-                    <div class="bookmark-icon"><img src="assets/img/icons/bookmark1.png" alt="Image-HasTech"></div>
-                    <div class="bookmark-icon-hover"><img src="assets/img/icons/bookmark2.png" alt="Image-HasTech"></div>
+                    <!--== End Team Item ==-->
                 </div>
-                <!--== End Team Item ==-->
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3">
-                <!--== Start Team Item ==-->
-                <div class="team-item">
-                    <div class="thumb">
-                        <a href="candidate-details.html">
-                            <img src="assets/img/team/3.jpg" width="160" height="160" alt="Image-HasTech">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <h4 class="title"><a href="candidate-details.html">Hassan El Idrissi</a></h4>
-                        <h5 class="sub-title">Menuisier</h5>
-                        <div class="rating-box">
-                            <i class="icofont-star"></i>
-                            <i class="icofont-star"></i>
-                            <i class="icofont-star"></i>
-                            <i class="icofont-star"></i>
-                            <i class="icofont-star"></i>
-                        </div>
-                        <p class="desc">Fabrication et installation de meubles en bois, menuiseries</p>
-                        <a class="btn-theme btn-white btn-sm" href="candidate-details.html">Voir le profile</a>
-                    </div>
-                    <div class="bookmark-icon"><img src="assets/img/icons/bookmark1.png" alt="Image-HasTech"></div>
-                    <div class="bookmark-icon-hover"><img src="assets/img/icons/bookmark2.png" alt="Image-HasTech"></div>
-                </div>
-                <!--== End Team Item ==-->
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3">
-                <!--== Start Team Item ==-->
-                <div class="team-item">
-                    <div class="thumb">
-                        <a href="candidate-details.html">
-                            <img src="assets/img/team/4.jpg" width="160" height="160" alt="Image-HasTech">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <h4 class="title"><a href="candidate-details.html">Hajar Azizi</a></h4>
-                        <h5 class="sub-title">Femme de ménage</h5>
-                        <div class="rating-box">
-                            <i class="icofont-star"></i>
-                            <i class="icofont-star"></i>
-                            <i class="icofont-star"></i>
-                            <i class="icofont-star"></i>
-                            <i class="icofont-star"></i>
-                        </div>
-                        <p class="desc">Effectue des tâches de nettoyage et d'entretien dans des résidences ou des bureaux. </p>
-                        <a class="btn-theme btn-white btn-sm" href="candidate-details.html">Voir le profile</a>
-                    </div>
-                    <div class="bookmark-icon"><img src="assets/img/icons/bookmark1.png" alt="Image-HasTech"></div>
-                    <div class="bookmark-icon-hover"><img src="assets/img/icons/bookmark2.png" alt="Image-HasTech"></div>
-                </div>
-                <!--== End Team Item ==-->
-            </div>
+            </c:forEach>
         </div>
     </div>
 </section>
@@ -1063,11 +854,11 @@
                         <li><a href="job-details.html">Détails de l'Maalam</a></li>
                     </ul>
                 </li>
-                <li><a href="employers-details.html">Détails de Maalam</a></li>
+                <li><a href="employers-details.jsp">Détails de Maalam</a></li>
                 <li><a href="#">Candidats</a>
                     <ul class="sub-menu">
                         <li><a href="candidate.html">Candidats</a></li>
-                        <li><a href="candidate-details.html">Détails du candidat</a></li>
+                        <li><a href="candidate-details.jsp">Détails du candidat</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Pages</a>

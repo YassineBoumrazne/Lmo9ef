@@ -7,6 +7,7 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 
 @WebServlet(name = "sellerRegistreServlet", value = "/sellerRegister")
 public class SellerRegistreServlet extends HttpServlet {

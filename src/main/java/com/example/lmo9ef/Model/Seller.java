@@ -1,7 +1,5 @@
 package com.example.lmo9ef.Model;
 
-import java.util.Date;
-
 public class Seller extends User {
     private String jobTitle;
     private float price;
