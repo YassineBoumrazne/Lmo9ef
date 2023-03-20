@@ -25,7 +25,7 @@ public class IndexRepository {
             while (resultSet.next()) {
                 SellerDTO sellerDTO = new SellerDTO();
                 sellerDTO.setId(resultSet.getInt("Id"));
-                sellerDTO.setExperience(resultSet.getInt("Experience"));
+                sellerDTO.setExperience(resultSet.getString("Experience"));
                 sellerDTO.setAddress(resultSet.getString("Addresse"));
                 sellerDTO.setFirstName(resultSet.getString("Prenom"));
                 sellerDTO.setLastName(resultSet.getString("Nom"));
@@ -54,7 +54,7 @@ public class IndexRepository {
             while (resultSet.next()) {
                 SellerDTO sellerDTO = new SellerDTO();
                 sellerDTO.setId(resultSet.getInt("Id"));
-                sellerDTO.setExperience(resultSet.getInt("Experience"));
+                sellerDTO.setExperience(resultSet.getString("Experience"));
                 sellerDTO.setAddress(resultSet.getString("Addresse"));
                 sellerDTO.setFirstName(resultSet.getString("Prenom"));
                 sellerDTO.setLastName(resultSet.getString("Nom"));
@@ -85,7 +85,7 @@ public class IndexRepository {
             while (resultSet.next()) {
                 SellerDTO sellerDTO = new SellerDTO();
                 sellerDTO.setId(resultSet.getInt("Id"));
-                sellerDTO.setExperience(resultSet.getInt("Experience"));
+                sellerDTO.setExperience(resultSet.getString("Experience"));
                 sellerDTO.setAddress(resultSet.getString("Addresse"));
                 sellerDTO.setFirstName(resultSet.getString("Prenom"));
                 sellerDTO.setLastName(resultSet.getString("Nom"));
@@ -115,7 +115,7 @@ public class IndexRepository {
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 sellerDTO.setId(resultSet.getInt("Id"));
-                sellerDTO.setExperience(resultSet.getInt("Experience"));
+                sellerDTO.setExperience(resultSet.getString("Experience"));
                 sellerDTO.setAddress(resultSet.getString("Addresse"));
                 sellerDTO.setFirstName(resultSet.getString("Prenom"));
                 sellerDTO.setLastName(resultSet.getString("Nom"));

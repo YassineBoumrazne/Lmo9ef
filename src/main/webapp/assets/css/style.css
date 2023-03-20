@@ -6944,3 +6944,149 @@ table p {
   vertical-align: 0px;
   margin: 0;
 }
+
+@media only screen and (max-width: 1199px) {
+  .footer-bottom .copyright {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .footer-bottom .copyright {
+    vertical-align: -1px;
+  }
+}
+.footer-bottom .copyright a {
+  color: #03a84e;
+}
+.footer-bottom .copyright a:hover {
+  color: #fff;
+}
+.footer-bottom .copyright i {
+  color: #03a84e;
+  font-size: 16px;
+  vertical-align: 0px;
+  margin: 0;
+}
+
+.inputfile{
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile + label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.inputfile + label * {
+  pointer-events: none;
+  /* in case of FastClick lib use */
+}
+
+.inputfile + label svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+  margin-top: -0.25em;
+  /* 4px */
+  margin-right: 0.25em;
+  /* 4px */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+@media (min-width: 576px) {
+  .progress-wrap.active-progress {
+    opacity: 1;
+  }
+}
+.progress-wrap {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  cursor: pointer;
+  display: block;
+  border-radius: 100%;
+  box-shadow: inset 0 0 0 0.1rem rgba(128, 130, 134, 0.25);
+  z-index: 1010;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.75rem);
+  transition: all 200ms linear, margin-right 0ms;
+}
+@media (prefers-reduced-motion: reduce) {
+  .progress-wrap {
+    transition: none;
+  }
+}
+.progress-wrap.active-progress {
+  visibility: visible;
+  transform: translateY(0);
+}
+.progress-wrap:after {
+  position: absolute;
+  font-family: "Unicons";
+  content: "\e951";
+  text-align: center;
+  line-height: 2.3rem;
+  font-size: 1.2rem;
+  color: #3f78e0;
+  left: 0;
+  top: 0;
+  height: 2.3rem;
+  width: 2.3rem;
+  cursor: pointer;
+  display: block;
+  z-index: 1;
+  transition: all 200ms linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  .progress-wrap:after {
+    transition: none;
+  }
+}
+img,
+svg {
+  vertical-align: middle;
+}
+.progress-wrap svg path {
+  fill: none;
+}
+.progress-wrap svg.progress-circle path {
+  stroke: #3f78e0;
+  stroke-width: 4;
+  box-sizing: border-box;
+  transition: all 200ms linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  .progress-wrap svg.progress-circle path {
+    transition: none;
+  }
+}
+
+@media (min-width: 576px) {
+  .progress-wrap.active-progress {
+    opacity: 1;
+  }
+}

@@ -57,7 +57,7 @@
                     <div class="header-align">
                         <div class="header-align-start">
                             <div class="header-logo-area">
-                                <a href="index.html">
+                                <a href="index.jsp">
                                     <img class="logo-main" src="assets/img/logo-light.png" alt="Logo" />
                                     <img class="logo-light" src="assets/img/logo-light.png" alt="Logo" />
                                 </a>
@@ -66,7 +66,7 @@
                         <div class="header-align-center">
                             <div class="header-navigation-area position-relative">
                                 <ul class="main-menu nav">
-                                    <li><a href="index.html"><span>Accueil</span></a></li>
+                                    <li><a href="index.jsp"><span>Accueil</span></a></li>
                                     <li class="has-submenu"><a href="#/"><span>Trouver un Maalam</span></a>
                                         <ul class="submenu-nav">
                                             <li><a href="job.html"><span>Maalams</span></a></li>
@@ -83,21 +83,42 @@
                                     <li class="has-submenu"><a href="#/"><span>Pages</span></a>
                                         <ul class="submenu-nav">
                                             <li><a href="about-us.html"><span>À propos de nous</span></a></li>
-                                            <li><a href="signin.jsp"><span>Connexion</span></a></li>
-                                            <li><a href="signup.jsp"><span>Inscription</span></a></li>
                                             <li><a href="page-not-found.html"><span>Page non trouvée</span></a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="contact.html"><span>Contact</span></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="header-align-end">
                             <div class="header-action-area">
-                                <a class="btn-registration" href="signup.jsp"><span>+</span> Inscription</a>
+                                <%
+
+                                    if (session != null && session.getAttribute("loggedInUser") != null) {
+                                        // the user is logged in
+                                        // perform authenticated actions here
+                                %>
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                    <!-- <i class="uil uil-shopping-cart"></i> -->
+                                    <img src="assets\img\photos\sh2.png" width="32" height="32" alt="">
+                                </a>
+                                <ul class="dropdown-menu" style="translate: -88px 0px;">
+                                    <li class="nav-item"><a class="dropdown-item" href="./profile.jsp">Profile</a></li>
+                                    <li class="nav-item"><form method="POST" action="logout">
+                                        <input type="submit" style="color:#e2626b" class="btn" value="Logout" />
+                                    </form></li>
+                                </ul>
+                                <%
+                                } else {
+                                    // the user is not logged in
+                                    // redirect to the login page or show an error message
+                                %>
+                                <a class="btn-registration" href="signin.jsp"><span>+</span> Connection</a>
                                 <button class="btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
                                     <i class="icofont-navigation-menu"></i>
                                 </button>
+                                <%
+                                    }
+                                %>
                             </div>
                         </div>
                     </div>
@@ -114,7 +135,7 @@
                             <h2 class="title">Page d'inscription</h2>
                             <nav class="breadcrumb-area">
                                 <ul class="breadcrumb justify-content-center">
-                                    <li><a href="index.html">Accueil</a></li>
+                                    <li><a href="index.jsp">Accueil</a></li>
                                     <li class="breadcrumb-sep">//</li>
                                     <li>Pages</li>
                                 </ul>
@@ -138,7 +159,7 @@
                                 </div>
                                 <ul class="nav nav-pills" id="pills-tab" role="tablist">
                                     <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="candidate-tab" data-bs-toggle="pill" data-bs-target="#candidate" type="button" role="tab" aria-controls="candidate" aria-selected="true"><i class="icofont-businessman"></i> customer</button>
+                                        <button class="nav-link active" id="candidate-tab" data-bs-toggle="pill" data-bs-target="#candidate" type="button" role="tab" aria-controls="candidate" aria-selected="true"><i class="icofont-businessman"></i> client</button>
                                     </li>
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="employer-tab" data-bs-toggle="pill" data-bs-target="#employer" type="button" role="tab" aria-controls="employer" aria-selected="false"><i class="icofont-bag-alt"></i>Maalam</button>
@@ -315,7 +336,7 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="widget-item widget-about">
                             <div class="widget-logo-area">
-                                <a href="index.html">
+                                <a href="index.jsp">
                                     <img class="logo-main" src="assets/img/logo-light-theme.png" alt="Logo" />
                                 </a>
                             </div>
@@ -398,7 +419,7 @@
             <!-- Mobile Menu Start -->
             <div class="mobile-menu-items">
                 <ul class="nav-menu">
-                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.jsp">Accueil</a></li>
                     <li><a href="#">Trouver des Maalams</a>
                         <ul class="sub-menu">
                             <li><a href="job.html">Maalams</a></li>

@@ -2,13 +2,12 @@ package com.example.lmo9ef;
 
 import java.io.*;
 
+import com.example.lmo9ef.Model.Customer;
+import com.example.lmo9ef.Model.Seller;
 import com.example.lmo9ef.Repository.AuthRepositroy;
 
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.*;
 
 @WebServlet(name = "loginServlet", value = "/login")
 public class LoginServlet extends HttpServlet {
@@ -25,21 +24,31 @@ public class LoginServlet extends HttpServlet {
 //        out.println(client.toStrings());
 
         try {
-            int i = authRepositroy.login(email, password);
-            if(i == 1){
+            Object i = authRepositroy.login(email, password);
+            System.out.println(i);
+            if(i != null){
                 HttpSession session = request.getSession(true);
-                session.setAttribute("login", true);
+                if (i instanceof Seller) {
+                    Seller seller = (Seller) i;
+                    session.setAttribute("loggedInUser", seller);
+                    session.setAttribute("User", "Seller");
+                    System.out.println("Seller");
+                } else {
+                    Customer customer = (Customer) i;
+                    session.setAttribute("loggedInUser", customer);
+                    session.setAttribute("User", "Customer");
+                    System.out.println("Customer");
+                }
+                Cookie sessionCookie = new Cookie("JSESSIONID", session.getId()); // create a new cookie
+                sessionCookie.setMaxAge(60*60); // set the cookie's expiration time in seconds (1 hour in this example)
+                response.addCookie(sessionCookie); // add the cookie to the response
                 out.println("Working...");
                 out.println("Client Login Successfuly...");
-                response.sendRedirect("index.jsp");
-            }else if (i == 2){
-                HttpSession session = request.getSession(true);
-                session.setAttribute("login", true);
-                out.println("Working...");
-                out.println("Seller Login Successfuly....");
+                response.sendRedirect("profile.jsp");
+                System.out.println(i);
             }else{
                 out.println("Working...");
-                out.println("problem de Login...");
+                response.sendRedirect("signin.jsp");
             }
 
         }catch (Exception e){
