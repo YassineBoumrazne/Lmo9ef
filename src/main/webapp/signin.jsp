@@ -1,3 +1,11 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: anasStilinski
+  Date: 3/5/2023
+  Time: 10:21 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -75,21 +83,42 @@
                                     <li class="has-submenu"><a href="#/"><span>Pages</span></a>
                                         <ul class="submenu-nav">
                                             <li><a href="about-us.html"><span>À propos de nous</span></a></li>
-                                            <li><a href="signin.jsp"><span>Connexion</span></a></li>
-                                            <li><a href="signup.jsp"><span>Inscription</span></a></li>
                                             <li><a href="page-not-found.html"><span>Page non trouvée</span></a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="contact.html"><span>Contact</span></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="header-align-end">
                             <div class="header-action-area">
+                                <%
+
+                                    if (session != null && session.getAttribute("loggedInUser") != null) {
+                                        // the user is logged in
+                                        // perform authenticated actions here
+                                %>
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                    <!-- <i class="uil uil-shopping-cart"></i> -->
+                                    <img src="assets\img\photos\sh2.png" width="32" height="32" alt="">
+                                </a>
+                                <ul class="dropdown-menu" style="translate: -88px 0px;">
+                                    <li class="nav-item"><a class="dropdown-item" href="./profile.jsp">Profile</a></li>
+                                    <li class="nav-item"><form method="POST" action="logout">
+                                        <input type="submit" style="color:#e2626b" class="btn" value="Logout" />
+                                    </form></li>
+                                </ul>
+                                <%
+                                } else {
+                                    // the user is not logged in
+                                    // redirect to the login page or show an error message
+                                %>
                                 <a class="btn-registration" href="signup.jsp"><span>+</span> Inscription</a>
                                 <button class="btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
                                     <i class="icofont-navigation-menu"></i>
                                 </button>
+                                <%
+                                    }
+                                %>
                             </div>
                         </div>
                     </div>

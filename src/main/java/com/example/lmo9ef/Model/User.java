@@ -14,7 +14,11 @@ public class User {
     private String pay;
     private String city;
 
-    public User(String lastName, String firstName, String sexe, String birthDay, String phoneNumber, String address, String email, String password, String pay, String city) {
+
+
+    private String ImagePath;
+
+    public User(String lastName, String firstName, String sexe, String birthDay, String phoneNumber, String address, String email, String password, String pay, String city, String ImagePath) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.sexe = sexe;
@@ -25,6 +29,7 @@ public class User {
         this.password = password;
         this.pay = pay;
         this.city = city;
+        this.ImagePath = ImagePath;
     }
 
     public String getPay() {
@@ -127,5 +132,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getImagePath() {
+        return ImagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        ImagePath = imagePath;
     }
 }

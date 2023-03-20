@@ -16,7 +16,7 @@ public class SellerRegistreServlet extends HttpServlet {
 
         AuthRepositroy authRepositroy = new AuthRepositroy();
 
-        Seller seller = new Seller(request.getParameter("Nom"), request.getParameter("Prenom"), request.getParameter("Sexe"), request.getParameter("DateDeNaissance"), request.getParameter("NumTelephone"), request.getParameter("Addresse"), request.getParameter("Email"), request.getParameter("Password"), request.getParameter("Pays"), request.getParameter("Ville"), "jobTitle", 999, 99);
+        Seller seller = new Seller(request.getParameter("Nom"), request.getParameter("Prenom"), request.getParameter("Sexe"), request.getParameter("DateDeNaissance"), request.getParameter("NumTelephone"), request.getParameter("Addresse"), request.getParameter("Email"), request.getParameter("Password"), request.getParameter("Pays"), request.getParameter("Ville"), "jobTitle", 999, ">2");
         PrintWriter out = response.getWriter();
 
         try {

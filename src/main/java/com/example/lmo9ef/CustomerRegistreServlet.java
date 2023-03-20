@@ -19,7 +19,7 @@ public class CustomerRegistreServlet extends HttpServlet {
 
         AuthRepositroy authRepositroy = new AuthRepositroy();
 
-        Customer customer = new Customer(request.getParameter("Nom"), request.getParameter("Prenom"), request.getParameter("Sexe"), request.getParameter("DateDeNaissance"), request.getParameter("NumTelephone"), request.getParameter("Addresse"), request.getParameter("Email"), request.getParameter("Password"), request.getParameter("Pays"), request.getParameter("Ville"));
+        Customer customer = new Customer(request.getParameter("Nom"), request.getParameter("Prenom"), request.getParameter("Sexe"), request.getParameter("DateDeNaissance"), request.getParameter("NumTelephone"), request.getParameter("Addresse"), request.getParameter("Email"), request.getParameter("Password"), request.getParameter("Pays"), request.getParameter("Ville"),"imagepath");
         PrintWriter out = response.getWriter();
 
         try {

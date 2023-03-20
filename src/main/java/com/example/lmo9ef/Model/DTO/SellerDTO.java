@@ -7,7 +7,7 @@ public class SellerDTO {
     private String firstName;
     private String jobTitle;
     private float price;
-    private int experience;
+    private String experience;
     private String address;
     private String pays;
     private String ville;
@@ -34,7 +34,7 @@ public class SellerDTO {
                 '}';
     }
 
-    public SellerDTO(int id, String ImagePath, String lastName, String firstName, String jobTitle, float price, int experience, String address, String pays, String ville, String description, String sexe, String birthDay, String email, String numTelephone, String workingTime) {
+    public SellerDTO(int id, String ImagePath, String lastName, String firstName, String jobTitle, float price, String experience, String address, String pays, String ville, String description, String sexe, String birthDay, String email, String numTelephone, String workingTime) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -164,11 +164,11 @@ public class SellerDTO {
         this.price = price;
     }
 
-    public int getExperience() {
+    public String getExperience() {
         return experience;
     }
 
-    public void setExperience(int experience) {
+    public void setExperience(String experience) {
         this.experience = experience;
     }
 

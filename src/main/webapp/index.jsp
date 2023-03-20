@@ -1,9 +1,10 @@
+<%@ page import="com.example.lmo9ef.Repository.AuthRepositroy" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.example.lmo9ef.Model.Categorie" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
 <!DOCTYPE html>
 <html lang="zxx">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -83,16 +84,55 @@
                                             <li><a href="page-not-found.html"><span>Page non trouvée</span></a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="contact.html"><span>Contact</span></a></li>
+                                    <%
+
+                                        if (session != null && session.getAttribute("loggedInUser") != null) {
+                                            // the user is logged in
+                                            // perform authenticated actions here
+                                    %>
+
+                                    <%
+                                    } else {
+                                        // the user is not logged in
+                                        // redirect to the login page or show an error message
+                                    %>
+                                    <li><a href="signin.jsp"><span>Connexion</span></a></li>
+                                    <%
+                                        }
+                                    %>
                                 </ul>
                             </div>
                         </div>
                         <div class="header-align-end">
                             <div class="header-action-area">
+                                <%
+
+                                    if (session != null && session.getAttribute("loggedInUser") != null) {
+                                        // the user is logged in
+                                        // perform authenticated actions here
+                                %>
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                    <!-- <i class="uil uil-shopping-cart"></i> -->
+                                    <img src="assets\img\photos\sh2.png" width="32" height="32" alt="">
+                                </a>
+                                <ul class="dropdown-menu" style="translate: -88px 0px;">
+                                    <li class="nav-item"><a class="dropdown-item" href="./profile.jsp">Profile</a></li>
+                                    <li class="nav-item"><form method="POST" action="logout">
+                                        <input type="submit" style="color:#e2626b" class="btn" value="Logout" />
+                                    </form></li>
+                                </ul>
+                                <%
+                                } else {
+                                    // the user is not logged in
+                                    // redirect to the login page or show an error message
+                                %>
                                 <a class="btn-registration" href="signup.jsp"><span>+</span> Inscription</a>
                                 <button class="btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
                                     <i class="icofont-navigation-menu"></i>
                                 </button>
+                                <%
+                                    }
+                                %>
                             </div>
                         </div>
                     </div>
@@ -204,126 +244,26 @@
                     </div>
                 </div>
                 <div class="row row-gutter-20" >
+                    <%
+                        AuthRepositroy authRepositroy = new AuthRepositroy();
+                        ArrayList<Categorie> Categories = new ArrayList<Categorie>();
+                        Categories = authRepositroy.getCategories();
+                        for (Categorie cat: Categories) {
+                    %>
                     <div class="col-sm-6 col-lg-3">
                         <!--== Start Job Category Item ==-->
                         <div class="job-category-item">
                             <div class="content">
-                                <h3 class="title"><a href="job-details.html">Plomberie / Services généraux <span>(305)</span></a></h3>
+                                <h3 class="title"><a href="job-details.html"><%=cat.getTitle() %>
+                                    <span>(<%=cat.getNumOfSellers()%>)</span></a></h3>
                             </div>
                             <a class="overlay-link" href="job-details.html"></a>
                         </div>
                         <!--== End Job Category Item ==-->
                     </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <!--== Start Job Category Item ==-->
-                        <div class="job-category-item">
-                            <div class="content">
-                                <h3 class="title"><a href="job-details.html">Electricité / Eclairage <span>(95)</span></a></h3>
-                            </div>
-                            <a class="overlay-link" href="job-details.html"></a>
-                        </div>
-                        <!--== End Job Category Item ==-->
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <!--== Start Job Category Item ==-->
-                        <div class="job-category-item">
-                            <div class="content">
-                                <h3 class="title"><a href="job-details.html">Peinture / Décoration <span>(212)</span></a></h3>
-                            </div>
-                            <a class="overlay-link" href="job-details.html"></a>
-                        </div>
-                        <!--== End Job Category Item ==-->
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <!--== Start Job Category Item ==-->
-                        <div class="job-category-item">
-                            <div class="content">
-                                <h3 class="title"><a href="job-details.html">Maçonnerie / Brique <span>(93)</span></a></h3>
-                            </div>
-                            <a class="overlay-link" href="job-details.html"></a>
-                        </div>
-                        <!--== End Job Category Item ==-->
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <!--== Start Job Category Item ==-->
-                        <div class="job-category-item">
-                            <div class="content">
-                                <h3 class="title"><a href="job-details.html">Cuisine / Salle de bains <span>(4)</span></a></h3>
-                            </div>
-                            <a class="overlay-link" href="job-details.html"></a>
-                        </div>
-                        <!--== End Job Category Item ==-->
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <!--== Start Job Category Item ==-->
-                        <div class="job-category-item">
-                            <div class="content">
-                                <h3 class="title"><a href="job-details.html">Menuiserie / Escaliers <span>(34)</span></a></h3>
-                            </div>
-                            <a class="overlay-link" href="job-details.html"></a>
-                        </div>
-                        <!--== End Job Category Item ==-->
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <!--== Start Job Category Item ==-->
-                        <div class="job-category-item">
-                            <div class="content">
-                                <h3 class="title"><a href="job-details.html">Toiture / Tuiles <span>(376)</span></a></h3>
-                            </div>
-                            <a class="overlay-link" href="job-details.html"></a>
-                        </div>
-                        <!--== End Job Category Item ==-->
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <!--== Start Job Category Item ==-->
-                        <div class="job-category-item">
-                            <div class="content">
-                                <h3 class="title"><a href="job-details.html">Jardinage / Paysagisme <span>(450)</span></a></h3>
-                            </div>
-                            <a class="overlay-link" href="job-details.html"></a>
-                        </div>
-                        <!--== End Job Category Item ==-->
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <!--== Start Job Category Item ==-->
-                        <div class="job-category-item">
-                            <div class="content">
-                                <h3 class="title"><a href="job-details.html">Déménagement / Stockage <span>(25)</span></a></h3>
-                            </div>
-                            <a class="overlay-link" href="job-details.html"></a>
-                        </div>
-                        <!--== End Job Category Item ==-->
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <!--== Start Job Category Item ==-->
-                        <div class="job-category-item">
-                            <div class="content">
-                                <h3 class="title"><a href="job-details.html">Electricité / Eclairage <span>(95)</span></a></h3>
-                            </div>
-                            <a class="overlay-link" href="job-details.html"></a>
-                        </div>
-                        <!--== End Job Category Item ==-->
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <!--== Start Job Category Item ==-->
-                        <div class="job-category-item">
-                            <div class="content">
-                                <h3 class="title"><a href="job-details.html">Réparations / montage <span>(666)</span></a></h3>
-                            </div>
-                            <a class="overlay-link" href="job-details.html"></a>
-                        </div>
-                        <!--== End Job Category Item ==-->
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <!--== Start Job Category Item ==-->
-                        <div class="job-category-item">
-                            <div class="content">
-                                <h3 class="title"><a href="job-details.html">Travaux de finition <span>(62)</span></a></h3>
-                            </div>
-                            <a class="overlay-link" href="job-details.html"></a>
-                        </div>
-                        <!--== End Job Category Item ==-->
-                    </div>
+                    <%
+                        }
+                    %>
                 </div>
             </div>
         </section>
@@ -823,7 +763,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="footer-bottom-content">
-                            <p class="copyright">© 2023 FPT. Made with <i class="icofont-heart"></i> by <a target="_blank" href="https://themeforest.net/user/codecarnival">AK,YB,AO,AE.</a></p>
+                            <p class="copyright">© 2023 FPT. Made with <i class="icofont-heart"></i> by <a target="_blank" href="#">AK,YB,AO,AE.</a></p>
                         </div>
                     </div>
                 </div>
