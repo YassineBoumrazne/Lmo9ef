@@ -75,7 +75,7 @@
                     <div class="header-align">
                         <div class="header-align-start">
                             <div class="header-logo-area">
-                                <a href="index.jsp">
+                                <a href="">
                                     <img class="logo-main" src="assets/img/logo-light.png" alt="Logo" />
                                     <img class="logo-light" src="assets/img/logo-light.png" alt="Logo" />
                                 </a>
@@ -84,7 +84,7 @@
                         <div class="header-align-center">
                             <div class="header-navigation-area position-relative">
                                 <ul class="main-menu nav">
-                                    <li><a href="index.jsp"><span>Accueil</span></a></li>
+                                    <li><a href=""><span>Accueil</span></a></li>
                                     <li class="has-submenu"><a href="#/"><span>Trouver un Maalam</span></a>
                                         <ul class="submenu-nav">
                                             <li><a href="job.html"><span>Maalams</span></a></li>
@@ -141,7 +141,7 @@
                             <h2 class="title">Votre Profile</h2>
                             <nav class="breadcrumb-area">
                                 <ul class="breadcrumb justify-content-center">
-                                    <li><a href="index.jsp">Accueil</a></li>
+                                    <li><a href="">Accueil</a></li>
                                     <li class="breadcrumb-sep">//</li>
                                     <li>Profile</li>
                                 </ul>
@@ -427,7 +427,7 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="widget-item widget-about">
                             <div class="widget-logo-area">
-                                <a href="index.jsp">
+                                <a href="">
                                     <img class="logo-main" src="assets/img/logo-light-theme.png" alt="Logo" />
                                 </a>
                             </div>
@@ -518,7 +518,7 @@
             <!-- Mobile Menu Start -->
             <div class="mobile-menu-items">
                 <ul class="nav-menu">
-                    <li><a href="index.jsp">Accueil</a></li>
+                    <li><a href="">Accueil</a></li>
                     <li><a href="#">Trouver des Maalams</a>
                         <ul class="sub-menu">
                             <li><a href="job.html">Maalams</a></li>

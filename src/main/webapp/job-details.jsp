@@ -51,7 +51,7 @@
           <div class="header-align">
             <div class="header-align-start">
               <div class="header-logo-area">
-                <a href="index.jsp">
+                <a href="">
                   <img class="logo-main" src="assets/img/logo-light.png" alt="Logo" />
                   <img class="logo-light" src="assets/img/logo-light.png" alt="Logo" />
                 </a>
@@ -60,7 +60,7 @@
             <div class="header-align-center">
               <div class="header-navigation-area position-relative">
                 <ul class="main-menu nav">
-                  <li><a href="index.jsp"><span>Accueil</span></a></li>
+                  <li><a href=""><span>Accueil</span></a></li>
                   <li class="has-submenu"><a href="#/"><span>Trouver un Maalam</span></a>
                     <ul class="submenu-nav">
                       <li><a href="job.html"><span>Maalams</span></a></li>
@@ -111,7 +111,7 @@
               <h2 class="title">Details</h2>
               <nav class="breadcrumb-area">
                 <ul class="breadcrumb justify-content-center">
-                  <li><a href="index.jsp">Home</a></li>
+                  <li><a href="">Home</a></li>
                   <li class="breadcrumb-sep">//</li>
                   <li>Job Details</li>
                 </ul>
@@ -144,7 +144,10 @@
               </div>
               <div class="job-details-price">
                 <h4 class="title"><c:out value="${seller.price}"/>DH <span>/Jour</span></h4>
-                <button type="button" class="btn-theme">Commander</button>
+                <form action="JobDetails" method="post">
+                  <input name="sellerId" hidden="hidden" value="<c:out value="${seller.id}"/>">
+                  <button type="submit" class="btn-theme">Commander</button>
+                </form>
               </div>
             </div>
           </div>
@@ -246,7 +249,7 @@
           <div class="col-md-6 col-lg-3">
             <div class="widget-item widget-about">
               <div class="widget-logo-area">
-                <a href="index.jsp">
+                <a href="">
                   <img class="logo-main" src="assets/img/logo-light-theme.png" alt="Logo" />
                 </a>
               </div>

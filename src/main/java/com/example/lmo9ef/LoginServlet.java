@@ -44,7 +44,7 @@ public class LoginServlet extends HttpServlet {
                 response.addCookie(sessionCookie); // add the cookie to the response
                 out.println("Working...");
                 out.println("Client Login Successfuly...");
-                response.sendRedirect("profile.jsp");
+                response.sendRedirect("index");
                 System.out.println(i);
             }else{
                 out.println("Working...");

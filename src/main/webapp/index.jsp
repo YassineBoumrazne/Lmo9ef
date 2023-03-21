@@ -53,7 +53,7 @@
                     <div class="header-align">
                         <div class="header-align-start">
                             <div class="header-logo-area">
-                                <a href="index.jsp">
+                                <a href="">
                                     <img class="logo-main" src="assets/img/logo-light.png" alt="Logo" />
                                     <img class="logo-light" src="assets/img/logo-light.png" alt="Logo" />
                                 </a>
@@ -62,7 +62,7 @@
                         <div class="header-align-center">
                             <div class="header-navigation-area position-relative">
                                 <ul class="main-menu nav">
-                                    <li><a href="index"><span>Accueil</span></a></li>
+                                    <li><a href=""><span>Accueil</span></a></li>
                                     <li class="has-submenu"><a href="#/"><span>Trouver un Maalam</span></a>
                                         <ul class="submenu-nav">
                                             <li><a href="job.html"><span>Maalams</span></a></li>
@@ -289,15 +289,15 @@
                             <div class="recent-job-item">
                                 <div class="company-info">
                                     <div class="logo">
-                                        <a href="<%=request.getContextPath()%>/JobDetails?id=<c:out value="${seller.id}"/>"><img src="<c:out value="${seller.imagePath}"/>" width="75" height="75" alt="Image-HasTech"></a>
+                                        <a href="JobDetails?id=<c:out value="${seller.id}"/>"><img src="<c:out value="${seller.imagePath}"/>" width="75" height="75" alt="Image-HasTech"></a>
                                     </div>
                                     <div class="content">
-                                        <h4 class="name"><a href="<%=request.getContextPath()%>/JobDetails?id=<c:out value="${seller.id}"/>"><c:out value="${seller.firstName}"/></a></h4>
+                                        <h4 class="name"><a href="JobDetails?id=<c:out value="${seller.id}"/>"><c:out value="${seller.firstName}"/></a></h4>
                                         <p class="address"><c:out value="${seller.ville}"/>, <c:out value="${seller.pays}"/></p>
                                     </div>
                                 </div>
                                 <div class="main-content">
-                                    <h3 class="title"><a href="<%=request.getContextPath()%>/JobDetails?id=<c:out value="${seller.id}"/>"><c:out value="${seller.jobTitle}"/></a></h3>
+                                    <h3 class="title"><a href="JobDetails?id=<c:out value="${seller.id}"/>"><c:out value="${seller.jobTitle}"/></a></h3>
                                     <h5 class="work-type">Temps plein</h5>
                                     <p class="desc"><c:out value="${seller.description}"/></p>
                                 </div>
@@ -306,7 +306,7 @@
                                         <h4><c:out value="${seller.price}"/></h4>
                                         <p>/jour</p>
                                     </div>
-                                    <a class="btn-theme btn-sm" href="<%=request.getContextPath()%>/JobDetails?id=<c:out value="${seller.id}"/>">Commander</a>
+                                    <a class="btn-theme btn-sm" href="JobDetails?id=<c:out value="${seller.id}"/>">Commander</a>
                                 </div>
                             </div>
                         <!--== End Recent Job Item ==-->
@@ -416,12 +416,12 @@
                     <!--== Start Team Item ==-->
                     <div class="team-item">
                         <div class="thumb">
-                            <a href="<%=request.getContextPath()%>/JobDetails?id=<c:out value="${seller.id}"/>">
+                            <a href="JobDetails?id=<c:out value="${seller.id}"/>">
                                 <img src="<c:out value="${seller.imagePath}"/>" width="160" height="160" alt="Image-HasTech">
                             </a>
                         </div>
                         <div class="content">
-                            <h4 class="title"><a href="<%=request.getContextPath()%>/JobDetails?id=<c:out value="${seller.id}"/>"><c:out value="${seller.firstName}"/> <c:out value="${seller.lastName}"/></a></h4>
+                            <h4 class="title"><a href="JobDetails?id=<c:out value="${seller.id}"/>"><c:out value="${seller.firstName}"/> <c:out value="${seller.lastName}"/></a></h4>
                             <h5 class="sub-title"><c:out value="${seller.jobTitle}"/></h5>
                             <div class="rating-box">
                                 <i class="icofont-star"></i>
@@ -431,7 +431,7 @@
                                 <i class="icofont-star"></i>
                             </div>
                             <p class="desc"><c:out value="${seller.description}"/></p>
-                            <a class="btn-theme btn-white btn-sm" href="<%=request.getContextPath()%>/JobDetails?id=<c:out value="${seller.id}"/>">Voir le profile</a>
+                            <a class="btn-theme btn-white btn-sm" href="JobDetails?id=<c:out value="${seller.id}"/>">Voir le profile</a>
                         </div>
                         <div class="bookmark-icon"><img src="assets/img/icons/bookmark1.png" alt="Image-HasTech"></div>
                         <div class="bookmark-icon-hover"><img src="assets/img/icons/bookmark2.png" alt="Image-HasTech"></div>
@@ -703,7 +703,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="widget-item widget-about">
                         <div class="widget-logo-area">
-                            <a href="index.jsp">
+                            <a href="">
                                 <img class="logo-main" src="assets/img/logo-light-theme.png" alt="Logo" />
                             </a>
                         </div>
@@ -787,7 +787,7 @@
         <!-- Mobile Menu Start -->
         <div class="mobile-menu-items">
             <ul class="nav-menu">
-                <li><a href="index.jsp">Accueil</a></li>
+                <li><a href="">Accueil</a></li>
                 <li><a href="#">Trouver des Maalam</a>
                     <ul class="sub-menu">
                         <li><a href="job.html">Maalam</a></li>

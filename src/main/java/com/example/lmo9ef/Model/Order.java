@@ -1,62 +1,64 @@
 package com.example.lmo9ef.Model;
 
+import com.example.lmo9ef.Model.Enum.Etat;
+
 import java.util.Date;
 
 public class Order {
     private int id;
-    private Date createdDate;
-    private boolean isCompleted;
-    private float price;
-    private Date duration;
+    private Date dateDeCommand;
+    private float prix;
+    private Date deleveryDate;
+    private Date dateDeDebut;
+    private Date dateDeFin;
     private String description;
+    private Etat etat;
+    private int buyerId;
+    private int sellerId;
 
-    public Order(int id, Date createdDate, boolean isCompleted, float price, Date duration, String description) {
-        this.id = id;
-        this.createdDate = createdDate;
-        this.isCompleted = isCompleted;
-        this.price = price;
-        this.duration = duration;
-        this.description = description;
-    }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Date getDateDeCommand() {
+        return dateDeCommand;
     }
 
-    public Date getCreatedDate() {
-        return createdDate;
+    public void setDateDeCommand(Date dateDeCommand) {
+        this.dateDeCommand = dateDeCommand;
     }
 
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+    public float getPrix() {
+        return prix;
     }
 
-    public boolean isCompleted() {
-        return isCompleted;
+    public void setPrix(float prix) {
+        this.prix = prix;
     }
 
-    public void setCompleted(boolean completed) {
-        isCompleted = completed;
+    public Date getDeleveryDate() {
+        return deleveryDate;
     }
 
-    public float getPrice() {
-        return price;
+    public void setDeleveryDate(Date deleveryDate) {
+        this.deleveryDate = deleveryDate;
     }
 
-    public void setPrice(float price) {
-        this.price = price;
+    public Date getDateDeDebut() {
+        return dateDeDebut;
     }
 
-    public Date getDuration() {
-        return duration;
+    public void setDateDeDebut(Date dateDeDebut) {
+        this.dateDeDebut = dateDeDebut;
     }
 
-    public void setDuration(Date duration) {
-        this.duration = duration;
+    public Date getDateDeFin() {
+        return dateDeFin;
+    }
+
+    public void setDateDeFin(Date dateDeFin) {
+        this.dateDeFin = dateDeFin;
     }
 
     public String getDescription() {
@@ -65,5 +67,29 @@ public class Order {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Etat getEtat() {
+        return etat;
+    }
+
+    public void setEtat(Etat etat) {
+        this.etat = etat;
+    }
+
+    public int getBuyerId() {
+        return buyerId;
+    }
+
+    public void setBuyerId(int buyerId) {
+        this.buyerId = buyerId;
+    }
+
+    public int getSellerId() {
+        return sellerId;
+    }
+
+    public void setSellerId(int sellerId) {
+        this.sellerId = sellerId;
     }
 }
