@@ -102,7 +102,7 @@
                                     <img src="assets\img\photos\sh2.png" width="32" height="32" alt="">
                                 </a>
                                 <ul class="dropdown-menu" style="translate: -88px 0px;">
-                                    <li class="nav-item"><a class="dropdown-item" href="./profile.jsp">Profile</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="profile.jsp">Profile</a></li>
                                     <li class="nav-item"><form method="POST" action="logout">
                                         <input type="submit" style="color:#e2626b" class="btn" value="Logout" />
                                     </form></li>
