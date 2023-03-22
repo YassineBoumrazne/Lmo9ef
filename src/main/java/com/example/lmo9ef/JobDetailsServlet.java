@@ -28,8 +28,11 @@ public class JobDetailsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try{
-
-
+            User logedInUser = (User) request.getSession().getAttribute("loggedInUser");
+            if(logedInUser == null){
+                response.sendRedirect("signin.jsp");
+                return;
+            }
             IndexRepository indexRepository = new IndexRepository();
             int id = Integer.parseInt(request.getParameter("id"));
             SellerDTO sellerDTO = indexRepository.getSeller(id);
