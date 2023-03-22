@@ -1,4 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html lang="zxx">
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -235,6 +237,74 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="comment-area">
+        <div class="container pt--0 pb--0">
+          <div class="row justify-content-center">
+
+            <div class="col-lg-10">
+              <div class="comment-view-area">
+                <h2 class="main-title">Comments (<c:out value="${fn:length(evaluations)}"/>)</h2>
+
+                <c:forEach var="evaluation" items="${evaluations}">
+                  <div class="comment-content">
+                  <div class="single-comment">
+                    <div class="author-info">
+                      <div class="thumb">
+                        <img src="<c:out value="${evaluation.buyerPic}"/>" alt="Image" width="72" height="72">
+                      </div>
+                      <div class="author-details">
+                        <h4 class="title"><c:out value="${evaluation.buyerName}"/></h4>
+                        <ul>
+                          <li> <c:out value="${evaluation.buyerVillePays}"/> || <span><c:out value="${evaluation.date}"/></span></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <p class="desc"><c:out value="${evaluation.commentaire}"/></p>
+                    <a class="btn-reply" ><i class="icofont-star"></i><c:out value="${evaluation.notation}"/></a>
+                  </div>
+                </c:forEach>
+              </div>
+              <div class="comment-form-wrap ">
+                <h2 class="main-title">Leave a Comment</h2>
+                <form class="comment-form"action="EvaluationServlet" method="post">
+                  <div class="row   d-flex align-items-center justify-content-center">
+                    <div class="col-md-12">
+                    </div>
+                    <div class="col-md-12 d-flex align-items-center justify-content-center">
+                      <div class="form-group">
+                        <div class="rating form-control">
+                          <input type="radio" name="Notation" value="5" id="5">
+                          <label for="5">☆</label>
+                          <input type="radio" name="Notation" value="4" id="4">
+                          <label for="4">☆</label>
+                          <input type="radio" name="Notation" value="3" id="3">
+                          <label for="3">☆</label>
+                          <input type="radio" name="Notation" value="2" id="2">
+                          <label for="2">☆</label>
+                          <input type="radio" name="Notation" value="1" id="1">
+                          <label for="1">☆</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <textarea class="form-control" placeholder="Massage" name="Commentaire"></textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group text-center mb--0">
+                        <input type="hidden" name="sellerId" value="${seller.id}"/>
+                        <button class="btn btn-theme" type="submit">Submit Now <i class="icofont-long-arrow-right"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
     </section>
     <!--== End Job Details Area Wrapper ==-->
