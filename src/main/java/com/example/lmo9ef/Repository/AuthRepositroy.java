@@ -7,6 +7,7 @@ import com.example.lmo9ef.Repository.connectivity.ConnectionClass;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class AuthRepositroy {
 
@@ -85,8 +86,8 @@ public class AuthRepositroy {
                 logedInC.setAddress(resultSet.getString("Addresse"));
                 logedInC.setEmail(resultSet.getString("Email"));
                 logedInC.setPassword(resultSet.getString("Password"));
-                logedInC.setPay(resultSet.getString("Pays"));
-                logedInC.setCity(resultSet.getString("Ville"));
+                logedInC.setVille(resultSet.getString("Pays"));
+                logedInC.setPays(resultSet.getString("Ville"));
                 loggedInUser = logedInC;
             } else {
                 preparedStatement = connection.prepareStatement("SELECT * FROM seller WHERE email = ? and password = ?");
@@ -131,115 +132,5 @@ public class AuthRepositroy {
         return loggedInUser;
     }
 
-    public Seller updateS(Seller S){
-        ConnectionClass connectionClass = new ConnectionClass();
-        Connection connection = connectionClass.getConnection();
-        PreparedStatement preparedStatement;
-        try {
-            preparedStatement = connection.prepareStatement("UPDATE `seller` SET `Nom` = ?, `Prenom` = ?, `Sexe` = ?, `NumTelephone` = ?, `Addresse` = ?, `Email` = ?, `Password` = ?, `JobTitle` = ?, `Prix` = ?, `Experience` = ?, `Ville` = ?, `Pays` = ?, `Description` = ?, `ImagePath` = ?, `WorkingTime` = ?, `DateDeNaissance` = ? WHERE `seller`.`Id` = ?");
-
-            preparedStatement.setString(1, S.getLastName());
-            preparedStatement.setString(2, S.getFirstName());
-            preparedStatement.setString(3, S.getSexe());
-            preparedStatement.setString(4, S.getPhoneNumber());
-            preparedStatement.setString(5, S.getAddress());
-            preparedStatement.setString(6, S.getEmail());
-            preparedStatement.setString(7, S.getPassword());
-            preparedStatement.setString(8, S.getJobTitle());
-            preparedStatement.setFloat(9, S.getPrice());
-            preparedStatement.setString(10, S.getExperience());
-            preparedStatement.setString(11, S.getCity());
-            preparedStatement.setString(12, S.getPay());
-            preparedStatement.setString(13, S.getVille());
-            preparedStatement.setString(14, S.getImagePath());
-            preparedStatement.setString(15, S.getWorkingTime());
-            preparedStatement.setString(16, S.getBirthDay());
-            preparedStatement.setInt(   17, S.getId());
-            preparedStatement.executeUpdate();
-
-            connection.close();
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-
-        return  S;
-    }
-
-    public Customer updateC(Customer C){
-        ConnectionClass connectionClass = new ConnectionClass();
-        Connection connection = connectionClass.getConnection();
-        PreparedStatement preparedStatement;
-
-        try {
-            preparedStatement = connection.prepareStatement("UPDATE `Customer` SET `Nom` = ?, `Prenom` = ?, `Sexe` = ?, `NumTelephone` = ?, `Addresse` = ?, `Email` = ?, `Password` = ?, `Ville` = ?, `Pays` = ?, `ImagePath` = ?, `DateDeNaissance` = ? WHERE `Customer`.`Id` = ?");
-
-
-            preparedStatement.setString(1, C.getLastName());
-            preparedStatement.setString(2, C.getFirstName());
-            preparedStatement.setString(3, C.getSexe());
-            preparedStatement.setString(4, C.getPhoneNumber());
-            preparedStatement.setString(5, C.getAddress());
-            preparedStatement.setString(6, C.getEmail());
-            preparedStatement.setString(7, C.getPassword());
-            preparedStatement.setString(8,C.getCity());
-            preparedStatement.setString(9,C.getPay());
-            preparedStatement.setString(10,C.getImagePath());
-            preparedStatement.setString(11,C.getBirthDay());
-            preparedStatement.setInt(   12,C.getId());
-            preparedStatement.executeUpdate();
-
-            connection.close();
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-
-
-        return  C;
-    }
-
-    public ArrayList<Categorie> getCategories(){
-        ArrayList<Categorie> Categories = new ArrayList<Categorie>();
-        ConnectionClass connectionClass = new ConnectionClass();
-        Connection connection = connectionClass.getConnection();
-        ResultSet rs;
-        PreparedStatement preparedStatement;
-        int i = 0;
-        try {
-            preparedStatement = connection.prepareStatement("SELECT * FROM `Categorie`");
-
-            rs = preparedStatement.executeQuery();
-            while(rs.next()) {
-                Categorie cat = new Categorie(rs.getString("Title"),rs.getInt("NumOfSellers"));
-                Categories.add(cat);
-            }
-            connection.close();
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-        return Categories;
-    }
-
-    public ArrayList<String> getExperience(){
-        ArrayList<String> Experience = new ArrayList<String>();
-        ConnectionClass connectionClass = new ConnectionClass();
-        Connection connection = connectionClass.getConnection();
-        ResultSet rs;
-        PreparedStatement preparedStatement;
-        int i = 0;
-        try {
-            preparedStatement = connection.prepareStatement("SELECT * FROM `Experience`");
-
-            rs = preparedStatement.executeQuery();
-
-            while(rs.next()) {
-                Experience.add(rs.getString("Title"));
-            }
-
-            connection.close();
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-        return Experience;
-    }
 
 }

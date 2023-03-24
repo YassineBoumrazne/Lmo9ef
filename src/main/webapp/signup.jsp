@@ -57,7 +57,7 @@
                     <div class="header-align">
                         <div class="header-align-start">
                             <div class="header-logo-area">
-                                <a href="index.jsp">
+                                <a href="<%=request.getContextPath()%>/index">
                                     <img class="logo-main" src="assets/img/logo-light.png" alt="Logo" />
                                     <img class="logo-light" src="assets/img/logo-light.png" alt="Logo" />
                                 </a>
@@ -66,7 +66,7 @@
                         <div class="header-align-center">
                             <div class="header-navigation-area position-relative">
                                 <ul class="main-menu nav">
-                                    <li><a href="index.jsp"><span>Accueil</span></a></li>
+                                    <li><a href="<%=request.getContextPath()%>/index"><span>Accueil</span></a></li>
                                     <li class="has-submenu"><a href="#/"><span>Trouver un Maalam</span></a>
                                         <ul class="submenu-nav">
                                             <li><a href="job.html"><span>Maalams</span></a></li>
@@ -91,37 +91,16 @@
                         </div>
                         <div class="header-align-end">
                             <div class="header-action-area">
-                                <%
-
-                                    if (session != null && session.getAttribute("loggedInUser") != null) {
-                                        // the user is logged in
-                                        // perform authenticated actions here
-                                %>
-                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                                    <!-- <i class="uil uil-shopping-cart"></i> -->
-                                    <img src="assets\img\photos\sh2.png" width="32" height="32" alt="">
-                                </a>
-                                <ul class="dropdown-menu" style="translate: -88px 0px;">
-                                    <li class="nav-item"><a class="dropdown-item" href="profile.jsp">Profile</a></li>
-                                    <li class="nav-item"><form method="POST" action="logout">
-                                        <input type="submit" style="color:#e2626b" class="btn" value="Logout" />
-                                    </form></li>
-                                </ul>
-                                <%
-                                } else {
-                                    // the user is not logged in
-                                    // redirect to the login page or show an error message
-                                %>
                                 <a class="btn-registration" href="signin.jsp"><span>+</span> Connection</a>
                                 <button class="btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
                                     <i class="icofont-navigation-menu"></i>
                                 </button>
-                                <%
-                                    }
-                                %>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
     </header>
     <!--== End Header Wrapper ==-->
 
@@ -135,7 +114,7 @@
                             <h2 class="title">Page d'inscription</h2>
                             <nav class="breadcrumb-area">
                                 <ul class="breadcrumb justify-content-center">
-                                    <li><a href="index.jsp">Accueil</a></li>
+                                    <li><a href="<%=request.getContextPath()%>/index">Accueil</a></li>
                                     <li class="breadcrumb-sep">//</li>
                                     <li>Pages</li>
                                 </ul>
@@ -336,7 +315,7 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="widget-item widget-about">
                             <div class="widget-logo-area">
-                                <a href="index.jsp">
+                                <a href="<%=request.getContextPath()%>/index">
                                     <img class="logo-main" src="assets/img/logo-light-theme.png" alt="Logo" />
                                 </a>
                             </div>
@@ -419,7 +398,7 @@
             <!-- Mobile Menu Start -->
             <div class="mobile-menu-items">
                 <ul class="nav-menu">
-                    <li><a href="index.jsp">Accueil</a></li>
+                    <li><a href="<%=request.getContextPath()%>/index">Accueil</a></li>
                     <li><a href="#">Trouver des Maalams</a>
                         <ul class="sub-menu">
                             <li><a href="job.html">Maalams</a></li>

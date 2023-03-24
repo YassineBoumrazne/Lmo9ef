@@ -11,10 +11,8 @@ public class User {
     private String email;
     private String password;
 
-    private String pay;
-    private String city;
-
-
+    private String Pays;
+    private String Ville;
 
     private String ImagePath;
 
@@ -27,25 +25,9 @@ public class User {
         this.address = address;
         this.email = email;
         this.password = password;
-        this.pay = pay;
-        this.city = city;
+        this.Pays = pay;
+        this.Ville = city;
         this.ImagePath = ImagePath;
-    }
-
-    public String getPay() {
-        return pay;
-    }
-
-    public void setPay(String pay) {
-        this.pay = pay;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
     }
 
     public String toStrings() {
@@ -60,6 +42,22 @@ public class User {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 '}';
+    }
+
+    public String getVille() {
+        return Ville;
+    }
+
+    public void setVille(String ville) {
+        Ville = ville;
+    }
+
+    public String getPays() {
+        return Pays;
+    }
+
+    public void setPays(String pays) {
+        Pays = pays;
     }
 
     public int getId() {

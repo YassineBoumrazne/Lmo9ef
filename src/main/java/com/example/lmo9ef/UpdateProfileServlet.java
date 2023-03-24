@@ -3,6 +3,7 @@ package com.example.lmo9ef;
 import com.example.lmo9ef.Model.Customer;
 import com.example.lmo9ef.Model.Seller;
 import com.example.lmo9ef.Repository.AuthRepositroy;
+import com.example.lmo9ef.Repository.ProfileRepository;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,6 +19,7 @@ public class UpdateProfileServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         AuthRepositroy authRepositroy = new AuthRepositroy();
+        ProfileRepository profileRepository = new ProfileRepository();
         HttpSession session = request.getSession(false);
         Object logedInUser = session.getAttribute("loggedInUser");
 
@@ -38,7 +40,7 @@ public class UpdateProfileServlet extends HttpServlet {
                 logedInS.setPays(request.getParameter("PaysS"));
                 logedInS.setDescription(request.getParameter("DescriptionS"));
                 logedInS.setWorkingTime(request.getParameter("WorkingTimeS"));
-                Seller i = authRepositroy.updateS(logedInS);
+                Seller i = profileRepository.UpdateSeller(logedInS);
                 session.setAttribute("loggedInUser", i);
             }else{
                 Customer logedInC = (Customer) logedInUser;
@@ -48,13 +50,13 @@ public class UpdateProfileServlet extends HttpServlet {
                 logedInC.setBirthDay(request.getParameter("DateDeNaissanceC"));
                 logedInC.setPhoneNumber(request.getParameter("NumTelephoneC"));
                 logedInC.setAddress(request.getParameter("AddresseC"));
-                logedInC.setCity(request.getParameter("VilleC"));
-                logedInC.setPay(request.getParameter("PaysC"));
-                Customer i = authRepositroy.updateC(logedInC);
+                logedInC.setVille(request.getParameter("VilleC"));
+                logedInC.setPays(request.getParameter("PaysC"));
+                Customer i = profileRepository.UpdateCustomer(logedInC);
                 session.setAttribute("loggedInUser", i);
 
             }
-            response.sendRedirect("profile.jsp");
+            response.sendRedirect("Profile");
         }catch (Exception e){
             e.printStackTrace();
         }

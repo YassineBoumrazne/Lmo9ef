@@ -30,22 +30,6 @@ public class Seller extends User {
     }
 
 
-    public String getVille() {
-        return Ville;
-    }
-
-    public void setVille(String ville) {
-        Ville = ville;
-    }
-
-    public String getPays() {
-        return Pays;
-    }
-
-    public void setPays(String pays) {
-        Pays = pays;
-    }
-
     public String getDescription() {
         return Description;
     }
