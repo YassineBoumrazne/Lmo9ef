@@ -53,7 +53,7 @@
           <div class="header-align">
             <div class="header-align-start">
               <div class="header-logo-area">
-                <a href="">
+                <a href="<%=request.getContextPath()%>/index">
                   <img class="logo-main" src="assets/img/logo-light.png" alt="Logo" />
                   <img class="logo-light" src="assets/img/logo-light.png" alt="Logo" />
                 </a>
@@ -62,7 +62,7 @@
             <div class="header-align-center">
               <div class="header-navigation-area position-relative">
                 <ul class="main-menu nav">
-                  <li><a href=""><span>Accueil</span></a></li>
+                  <li><a href="<%=request.getContextPath()%>/index"><span>Accueil</span></a></li>
                   <li class="has-submenu"><a href="#/"><span>Trouver un Maalam</span></a>
                     <ul class="submenu-nav">
                       <li><a href="job.html"><span>Maalams</span></a></li>
@@ -113,7 +113,7 @@
               <h2 class="title">Details</h2>
               <nav class="breadcrumb-area">
                 <ul class="breadcrumb justify-content-center">
-                  <li><a href="">Home</a></li>
+                  <li><a href="<%=request.getContextPath()%>/index">Home</a></li>
                   <li class="breadcrumb-sep">//</li>
                   <li>Job Details</li>
                 </ul>
@@ -319,7 +319,7 @@
           <div class="col-md-6 col-lg-3">
             <div class="widget-item widget-about">
               <div class="widget-logo-area">
-                <a href="">
+                <a href="<%=request.getContextPath()%>/index">
                   <img class="logo-main" src="assets/img/logo-light-theme.png" alt="Logo" />
                 </a>
               </div>

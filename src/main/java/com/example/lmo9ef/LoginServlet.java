@@ -32,20 +32,17 @@ public class LoginServlet extends HttpServlet {
                     Seller seller = (Seller) i;
                     session.setAttribute("loggedInUser", seller);
                     session.setAttribute("User", "Seller");
-                    System.out.println("Seller");
                 } else {
                     Customer customer = (Customer) i;
                     session.setAttribute("loggedInUser", customer);
                     session.setAttribute("User", "Customer");
-                    System.out.println("Customer");
                 }
                 Cookie sessionCookie = new Cookie("JSESSIONID", session.getId()); // create a new cookie
                 sessionCookie.setMaxAge(60*60); // set the cookie's expiration time in seconds (1 hour in this example)
                 response.addCookie(sessionCookie); // add the cookie to the response
                 out.println("Working...");
                 out.println("Client Login Successfuly...");
-                response.sendRedirect("index");
-                System.out.println(i);
+                response.sendRedirect("Profile");
             }else{
                 out.println("Working...");
                 response.sendRedirect("signin.jsp");

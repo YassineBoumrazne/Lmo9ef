@@ -1,5 +1,6 @@
 package com.example.lmo9ef.Repository;
 
+import com.example.lmo9ef.Model.Categorie;
 import com.example.lmo9ef.Model.DTO.SellerDTO;
 import com.example.lmo9ef.Repository.connectivity.ConnectionClass;
 
@@ -135,5 +136,50 @@ public class IndexRepository {
             System.out.println(ex.getMessage());
         }
         return  sellerDTO;
+    }
+
+    public List<Categorie> getCategories(){
+        List<Categorie> Categories = new ArrayList<>();
+        ConnectionClass connectionClass = new ConnectionClass();
+        Connection connection = connectionClass.getConnection();
+        ResultSet rs;
+        PreparedStatement preparedStatement;
+        int i = 0;
+        try {
+            preparedStatement = connection.prepareStatement("SELECT * FROM `Categorie`");
+
+            rs = preparedStatement.executeQuery();
+            while(rs.next()) {
+                Categorie cat = new Categorie(rs.getString("Title"),rs.getInt("NumOfSellers"));
+                Categories.add(cat);
+            }
+            connection.close();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return Categories;
+    }
+
+    public List<String> getExperience(){
+        List<String> Experience = new ArrayList<>();
+        ConnectionClass connectionClass = new ConnectionClass();
+        Connection connection = connectionClass.getConnection();
+        ResultSet rs;
+        PreparedStatement preparedStatement;
+        int i = 0;
+        try {
+            preparedStatement = connection.prepareStatement("SELECT * FROM `Experience`");
+
+            rs = preparedStatement.executeQuery();
+
+            while(rs.next()) {
+                Experience.add(rs.getString("Title"));
+            }
+
+            connection.close();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return Experience;
     }
 }
