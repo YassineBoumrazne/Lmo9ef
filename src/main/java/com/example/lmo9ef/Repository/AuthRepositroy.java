@@ -73,7 +73,7 @@ public class AuthRepositroy {
         try {
             preparedStatement = connection.prepareStatement("SELECT * FROM Customer WHERE email = ? and password = ?");
             preparedStatement.setString(1, email);
-            preparedStatement.setString(2, password);
+            preparedStatement.setString(2, hashPassword(password));
             resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {

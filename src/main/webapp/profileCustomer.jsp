@@ -164,12 +164,12 @@
                                     <div class="mt-2">
                                         <div class="p-2 d-flex justify-content-center">
                                             <div class="d-flex align-items-center flex-column">
-                                                <img id="blahS" src="assets\img\photos\Profile_example.png"
+                                                <img id="blahC" src="assets\img\photos\Profile_example.png"
                                                      alt="your image" width="256" height="256">
-                                                <input type="file" onchange="readURL(this);" name="file-1S[]"
-                                                       id="file-1S" class="inputfile inputfile-1"
+                                                <input type="file" onchange="readURL(this);" name="file-1C[]"
+                                                       id="file-1C" class="inputfile inputfile-1"
                                                        accept="image/png, image/gif, image/jpeg">
-                                                <label for="file-1S" class="btn-theme">
+                                                <label for="file-1C" class="btn-theme">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17"
                                                          viewBox="0 0 20 17">
                                                         <path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path>
@@ -182,7 +182,7 @@
                                                             var reader = new FileReader();
 
                                                             reader.onload = function (e) {
-                                                                $('#blahS')
+                                                                $('#blahC')
                                                                     .attr('src', e.target.result)
                                                                     .width(256)
                                                                     .height(256);
@@ -209,14 +209,14 @@
                                             <div class="row g-4 mt-2">
                                                 <div class="col-6">
                                                     <label class="form-label">Nom</label>
-                                                    <input type="text" class="form-control" placeholder="Nom" id="NomS"
-                                                           name="NomS"
+                                                    <input type="text" class="form-control" placeholder="Nom" id="NomC"
+                                                           name="NomC"
                                                            value="<c:out value="${user.getLastName()}"/>">
                                                 </div>
                                                 <div class="col-6">
                                                     <label class="form-label">Prenom</label>
                                                     <input type="text" class="form-control" placeholder="Prenom"
-                                                           id="PrenomS" name="PrenomS"
+                                                           id="PrenomC" name="PrenomC"
                                                            value="<c:out value="${user.getFirstName()}"/>">
                                                 </div>
                                             </div>
@@ -226,27 +226,27 @@
                                                     <input type="text"
                                                            oninput="this.value=this.value.replace(/[^0-9]/g,'');"
                                                            onpaste="return false;" class="form-control"
-                                                           placeholder="Numéro de Téléphone" id="NumTelephoneS"
-                                                           name="NumTelephoneS" value="<c:out value="${user.getPhoneNumber()}"/>">
+                                                           placeholder="Numéro de Téléphone" id="NumTelephoneC"
+                                                           name="NumTelephoneC" value="<c:out value="${user.getPhoneNumber()}"/>">
                                                 </div>
                                                 <div class="col-6">
                                                     <label class="form-label">Date de Naissance</label>
                                                     <input type="date" class="form-control"
-                                                           placeholder="Date de Naissance" id="DateDeNaissanceS"
-                                                           name="DateDeNaissanceS" value="<c:out value="${user.getBirthDay()}"/>">
+                                                           placeholder="Date de Naissance" id="DateDeNaissanceC"
+                                                           name="DateDeNaissanceC" value="<c:out value="${user.getBirthDay()}"/>">
                                                 </div>
                                             </div>
                                             <div class="row g-4 mt-3">
                                                 <div class="col-6">
                                                     <label class="form-label">Addresse</label>
                                                     <input type="text" class="form-control" placeholder="Addresse"
-                                                           id="AddresseS" name="AddresseS"
+                                                           id="AddresseC" name="AddresseC"
                                                            value="<c:out value="${user.getAddress()}"/>">
                                                 </div>
                                                 <div class="col-6">
                                                     <label class="form-label">Email</label>
                                                     <input type="email" class="form-control" placeholder="Email"
-                                                           id="EmailS" name="EmailS" value="<c:out value="${user.getEmail()}"/>">
+                                                           id="EmailC" name="EmailC" value="<c:out value="${user.getEmail()}"/>">
                                                 </div>
                                             </div>
 
@@ -281,12 +281,12 @@
                                                 <div class="col-6">
                                                     <label class="form-label">Ville</label>
                                                     <input type="text" class="form-control" placeholder="Ville"
-                                                           id="VilleS" name="VilleS" value="<c:out value="${user.getVille()}"/>">
+                                                           id="VilleC" name="VilleC" value="<c:out value="${user.getVille()}"/>">
                                                 </div>
                                                 <div class="col-6">
                                                     <label class="form-label">Pays</label>
                                                     <input type="Text" class="form-control" placeholder="Pays"
-                                                           id="PaysS" name="PaysS" value="<c:out value="${user.getPays()}"/>">
+                                                           id="PaysC" name="PaysC" value="<c:out value="${user.getPays()}"/>">
                                                 </div>
                                             </div>
 <%--                                            <div class="row g-4 mt-3">--%>
