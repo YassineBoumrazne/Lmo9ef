@@ -5,6 +5,8 @@ import com.example.lmo9ef.Model.Customer;
 import com.example.lmo9ef.Model.Seller;
 import com.example.lmo9ef.Repository.connectivity.ConnectionClass;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,11 +23,11 @@ public class AuthRepositroy {
             preparedStatement.setString(1, customer.getLastName());
             preparedStatement.setString(2, customer.getFirstName());
             preparedStatement.setString(3, customer.getSexe());
-            preparedStatement.setString(4,   customer.getBirthDay());
+            preparedStatement.setString(4, customer.getBirthDay());
             preparedStatement.setString(5, customer.getPhoneNumber());
             preparedStatement.setString(6, customer.getAddress());
             preparedStatement.setString(7, customer.getEmail());
-            preparedStatement.setString(8, customer.getPassword());
+            preparedStatement.setString(8, hashPassword(customer.getPassword()));
 
             i = preparedStatement.executeUpdate();
             connection.close();
@@ -48,7 +50,7 @@ public class AuthRepositroy {
             preparedStatement.setString(5, seller.getPhoneNumber());
             preparedStatement.setString(6, seller.getAddress());
             preparedStatement.setString(7, seller.getEmail());
-            preparedStatement.setString(8, seller.getPassword());
+            preparedStatement.setString(8, hashPassword(seller.getPassword()));
             preparedStatement.setString(9, seller.getJobTitle());
             preparedStatement.setFloat(10, seller.getPrice());
             preparedStatement.setString(11, seller.getExperience());
@@ -92,7 +94,7 @@ public class AuthRepositroy {
             } else {
                 preparedStatement = connection.prepareStatement("SELECT * FROM seller WHERE email = ? and password = ?");
                 preparedStatement.setString(1, email);
-                preparedStatement.setString(2, password);
+                preparedStatement.setString(2, hashPassword(password));
 
                 resultSet = preparedStatement.executeQuery();
 
@@ -130,6 +132,29 @@ public class AuthRepositroy {
             System.out.println(ex.getMessage());
         }
         return loggedInUser;
+    }
+
+    // Hashes a password using the SHA-256 algorithm
+    public static String hashPassword(String password) {
+        try {
+            // Create a MessageDigest object with the SHA-256 algorithm
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+
+            // Convert the password string to bytes and hash it
+            byte[] hashedBytes = digest.digest(password.getBytes());
+
+            // Convert the hashed bytes to a hexadecimal string
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hashedBytes.length; i++) {
+                sb.append(Integer.toString((hashedBytes[i] & 0xff) + 0x100, 16).substring(1));
+            }
+            String hashedPassword = sb.toString();
+
+            return hashedPassword;
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
 
