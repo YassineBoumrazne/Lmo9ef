@@ -52,6 +52,7 @@ public class UpdateProfileServlet extends HttpServlet {
                 logedInC.setAddress(request.getParameter("AddresseC"));
                 logedInC.setVille(request.getParameter("VilleC"));
                 logedInC.setPays(request.getParameter("PaysC"));
+                System.out.println(request.getParameter("PrenomC") + " firstneame update");
                 Customer i = profileRepository.UpdateCustomer(logedInC);
                 session.setAttribute("loggedInUser", i);
 
