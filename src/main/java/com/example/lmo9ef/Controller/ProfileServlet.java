@@ -1,9 +1,9 @@
-package com.example.lmo9ef;
+package com.example.lmo9ef.Controller;
 
 import com.example.lmo9ef.Model.Categorie;
 import com.example.lmo9ef.Model.Customer;
 import com.example.lmo9ef.Model.Seller;
-import com.example.lmo9ef.Repository.IndexRepository;
+import com.example.lmo9ef.Repository.SellerRepository;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -22,11 +22,11 @@ public class ProfileServlet extends HttpServlet {
                 HttpSession session = request.getSession(false);
                 if (session != null && session.getAttribute("loggedInUser") != null) {
                         System.out.println("inProfileServlet");
-                        IndexRepository indexRepository = new IndexRepository();
+                        SellerRepository sellerRepository = new SellerRepository();
 
-                        List<Categorie> Categories = indexRepository.getCategories();
+                        List<Categorie> Categories = sellerRepository.getCategories();
 
-                        List<String> Experiences = indexRepository.getExperience();
+                        List<String> Experiences = sellerRepository.getExperience();
 
                         request.setAttribute("Categories", Categories);
                         request.setAttribute("Experiences", Experiences);

@@ -11,16 +11,18 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class IndexRepository {
+public class SellerRepository {
 
-    public List<SellerDTO> retreiveData() {
+    public List<SellerDTO> SellersSearch(String jobTitle, String ville) {
         ConnectionClass connectionClass = new ConnectionClass();
         Connection connection = connectionClass.getConnection();
         ResultSet resultSet = null;
         PreparedStatement preparedStatement;
         List<SellerDTO> listSeller = new ArrayList<>();
         try {
-            preparedStatement = connection.prepareStatement("SELECT * FROM seller");
+            preparedStatement = connection.prepareStatement("SELECT * FROM seller INNER JOIN Categorie ON seller.CategorieId =  Categorie.Id WHERE Categorie.Title = ? and seller.Ville = ?");
+            preparedStatement.setString(1, jobTitle);
+            preparedStatement.setString(2, ville);
 
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
@@ -34,6 +36,8 @@ public class IndexRepository {
                 sellerDTO.setJobTitle(resultSet.getString("JobTitle"));
                 sellerDTO.setVille(resultSet.getString("Ville"));
                 sellerDTO.setPays(resultSet.getString("Pays"));
+                sellerDTO.setDescription(resultSet.getString("Description"));
+                sellerDTO.setImagePath(resultSet.getString("ImagePath"));
                 listSeller.add(sellerDTO);
             }
         } catch (SQLException ex) {

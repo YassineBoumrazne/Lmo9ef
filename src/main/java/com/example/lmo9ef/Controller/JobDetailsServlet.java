@@ -1,27 +1,21 @@
-package com.example.lmo9ef;
+package com.example.lmo9ef.Controller;
 
+import com.example.lmo9ef.Lmo9efCore.JavaMails.JavaMails;
 import com.example.lmo9ef.Model.DTO.SellerDTO;
 import com.example.lmo9ef.Model.Enum.Etat;
 import com.example.lmo9ef.Model.Evaluation;
 import com.example.lmo9ef.Model.Order;
 import com.example.lmo9ef.Model.User;
 import com.example.lmo9ef.Repository.EvaluationRepository;
-import com.example.lmo9ef.Repository.IndexRepository;
+import com.example.lmo9ef.Repository.SellerRepository;
 import com.example.lmo9ef.Repository.OrderRepository;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 
-import javax.mail.Message;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
 import java.io.IOException;
 import java.util.List;
-import java.util.Properties;
 
 @WebServlet(name = "JobDetailsServlet", value = "/JobDetails")
 public class JobDetailsServlet extends HttpServlet {
@@ -33,9 +27,9 @@ public class JobDetailsServlet extends HttpServlet {
                 response.sendRedirect("signin.jsp");
                 return;
             }
-            IndexRepository indexRepository = new IndexRepository();
+            SellerRepository sellerRepository = new SellerRepository();
             int id = Integer.parseInt(request.getParameter("id"));
-            SellerDTO sellerDTO = indexRepository.getSeller(id);
+            SellerDTO sellerDTO = sellerRepository.getSeller(id);
             request.setAttribute("seller", sellerDTO);
 
             EvaluationRepository evaluationRepository = new EvaluationRepository();
@@ -59,7 +53,8 @@ public class JobDetailsServlet extends HttpServlet {
         //test
         try{
             OrderRepository orderRepository = new OrderRepository();
-            IndexRepository indexRepository = new IndexRepository();
+            SellerRepository sellerRepository = new SellerRepository();
+            JavaMails javaMails = new JavaMails();
 
             int sellerId = Integer.parseInt(request.getParameter("sellerId"));
             User logedInUser = (User) request.getSession().getAttribute("loggedInUser");
@@ -67,7 +62,7 @@ public class JobDetailsServlet extends HttpServlet {
                 response.sendRedirect("signin.jsp");
                 return;
             }
-            SellerDTO seller = indexRepository.getSeller(sellerId);
+            SellerDTO seller = sellerRepository.getSeller(sellerId);
 
             Order order = new Order();
             order.setPrix(seller.getPrice());
@@ -76,56 +71,11 @@ public class JobDetailsServlet extends HttpServlet {
             order.setSellerId(sellerId);
 
             orderRepository.commander(order);
-            /*sendEmailNotifation();*/
+            javaMails.sendEmailNotifation(logedInUser.getFirstName(), logedInUser.getLastName(), seller.getEmail());
             response.sendRedirect("index");
-
-
-
         }
         catch(Exception ex){
 
         }
     }
-
-    /*private void sendEmailNotifation(){
-        String username = "lmo9ef@gmail.com";
-        String password = "Lmo#9ef@20&23";
-
-        Properties props = new Properties();
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
-
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.port", "587");
-        props.put("mail.smtp.ssl.protocols", "TLSv1.2");
-
-
-
-
-        Session session = Session.getInstance(props, new javax.mail.Authenticator() {
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(username, password);
-            }
-        });
-        session.getProperties().put("mail.smtp.starttls.enable", "true");
-
-        session.getProperties().put("mail.smtp.ssl.trust", "smtp.gmail.com");
-        try {
-
-            Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("lmo9ef@gmail.com"));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("yassine.loccase@gmail.com"));
-            message.setSubject("Test Email");
-            message.setText("This is a test email!");
-
-            // Send the email
-            Transport.send(message);
-
-
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-
-        }
-    }*/
 }
