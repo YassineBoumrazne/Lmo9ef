@@ -1,4 +1,4 @@
-package com.example.lmo9ef;
+package com.example.lmo9ef.Controller;
 
 import com.example.lmo9ef.Model.Seller;
 import com.example.lmo9ef.Repository.AuthRepositroy;

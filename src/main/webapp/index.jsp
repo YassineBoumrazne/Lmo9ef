@@ -172,42 +172,33 @@
                                     <div class="col-12">
                                         <div class="job-search-wrap">
                                             <div class="job-search-form">
-                                                <form action="#">
+                                                <form method="post" action="BlogServlet">
                                                     <div class="row row-gutter-10">
                                                         <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control"
-                                                                       placeholder="Type de service">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
-                                                            <div class="form-group">
-                                                                <select class="form-control">
+                                                                <select class="form-control" name="city" id="city">
                                                                     <option value="1" selected>Ville</option>
-                                                                    <option value="2">Agadir</option>
-                                                                    <option value="3">Safi</option>
-                                                                    <option value="4">Taroudant</option>
-                                                                    <option value="5">Casablanca</option>
-                                                                    <option value="6">Rabat</option>
+                                                                    <option value="Agadir">Agadir</option>
+                                                                    <option value="Safi">Safi</option>
+                                                                    <option value="Taroudant">Taroudant</option>
+                                                                    <option value="Casablanca">Casablanca</option>
+                                                                    <option value="Rabat">Rabat</option>
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
                                                             <div class="form-group">
-                                                                <select class="form-control">
+                                                                <select class="form-control" name="category" id="category">
                                                                     <option value="1" selected>Catégorie</option>
-                                                                    <option value="2">Plomberie</option>
-                                                                    <option value="3">Peinture</option>
-                                                                    <option value="4">Bricolage</option>
-                                                                    <option value="5">Jardinage</option>
-                                                                    <option value="6">Ménage</option>
+                                                                    <c:forEach var="categorie" items="${Categories}">
+                                                                        <option value="<c:out value="${categorie.getTitle()}"/>"><c:out value="${categorie.getTitle()}"/></option>
+                                                                    </c:forEach>
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
                                                             <div class="form-group">
-                                                                <button type="button" class="btn-form-search"><i
-                                                                        class="icofont-search-1"></i></button>
+                                                                <button type="submit" class="btn-form-search"><i class="icofont-search-1"></i></button>
                                                             </div>
                                                         </div>
                                                     </div>
