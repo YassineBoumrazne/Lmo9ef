@@ -138,9 +138,6 @@
                                     <form method="post" action="BlogServlet">
                                         <div class="row row-gutter-10">
                                             <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="Type de service" name="TypeOfService" id="TypeOfService">
-                                                </div>
                                             </div>
                                             <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
                                                 <div class="form-group">
@@ -220,25 +217,37 @@
                             <div class="col-12 text-left">
                                 <div class="pagination-area">
                                     <nav>
+
                                         <ul class="page-numbers d-inline-flex">
-                                            <li>
-                                                <a class="page-number active" href="blog.html">1</a>
-                                            </li>
-                                            <li>
-                                                <a class="page-number" href="blog.html">2</a>
-                                            </li>
-                                            <li>
-                                                <a class="page-number" href="blog.html">3</a>
-                                            </li>
-                                            <li>
-                                                <a class="page-number" href="blog.html">4</a>
-                                            </li>
-                                            <li>
-                                                <a class="page-number next" href="blog.html">
-                                                    <i class="icofont-long-arrow-right"></i>
-                                                </a>
-                                            </li>
+                                            <c:if test="${currentPage != 1}">
+                                                <li>
+                                                    <a class="page-number previous" href="BlogServlet?page=${currentPage - 1}"><i class="icofont-long-arrow-left"></i></a>
+                                                </li>
+                                            </c:if>
+
+                                            <c:forEach begin="1" end="${noOfPages}" var="i">
+                                                <c:choose>
+                                                    <c:when test="${currentPage eq i}">
+                                                        <li>
+                                                            <a class="page-number active" href="#">${i}</a>
+                                                        </li>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <li>
+                                                            <a class="page-number" href="BlogServlet?page=${i}">${i}</a>
+                                                        </li>
+                                                    </c:otherwise>
+                                                </c:choose>
+                                            </c:forEach>
+
+                                            <c:if test="${currentPage lt noOfPages}">
+                                                <li>
+                                                    <a class="page-number next" href="BlogServlet?page=${currentPage + 1}"><i class="icofont-long-arrow-right"></i></a>
+                                                </li>
+
+                                            </c:if>
                                         </ul>
+
                                     </nav>
                                 </div>
                             </div>
