@@ -11,36 +11,55 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class IndexRepository {
+public class SellerRepository {
 
-    public List<SellerDTO> retreiveData() {
-        ConnectionClass connectionClass = new ConnectionClass();
-        Connection connection = connectionClass.getConnection();
-        ResultSet resultSet = null;
-        PreparedStatement preparedStatement;
+    private int noOfRecords;
+
+    public int getNoOfRecords() {
+        return noOfRecords;
+    }
+
+    public List<SellerDTO> SellersSearch(String jobTitle, String ville, int offset, int noOfRecords) {
         List<SellerDTO> listSeller = new ArrayList<>();
-        try {
-            preparedStatement = connection.prepareStatement("SELECT * FROM seller");
+        try (Connection connection = new ConnectionClass().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement("SELECT SQL_CALC_FOUND_ROWS * FROM seller INNER JOIN Categorie ON seller.CategorieId = Categorie.Id WHERE Categorie.Title = ? and seller.Ville = ? LIMIT ? , ?");
+             PreparedStatement countStatement = connection.prepareStatement("SELECT FOUND_ROWS()");
+        ) {
+            preparedStatement.setString(1, jobTitle);
+            preparedStatement.setString(2, ville);
+            preparedStatement.setInt(3, offset);
+            preparedStatement.setInt(4, noOfRecords);
 
-            resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                SellerDTO sellerDTO = new SellerDTO();
-                sellerDTO.setId(resultSet.getInt("Id"));
-                sellerDTO.setExperience(resultSet.getString("Experience"));
-                sellerDTO.setAddress(resultSet.getString("Addresse"));
-                sellerDTO.setFirstName(resultSet.getString("Prenom"));
-                sellerDTO.setLastName(resultSet.getString("Nom"));
-                sellerDTO.setPrice(resultSet.getFloat("Prix"));
-                sellerDTO.setJobTitle(resultSet.getString("JobTitle"));
-                sellerDTO.setVille(resultSet.getString("Ville"));
-                sellerDTO.setPays(resultSet.getString("Pays"));
-                listSeller.add(sellerDTO);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    SellerDTO sellerDTO = new SellerDTO();
+                    sellerDTO.setId(resultSet.getInt("Id"));
+                    sellerDTO.setExperience(resultSet.getString("Experience"));
+                    sellerDTO.setAddress(resultSet.getString("Addresse"));
+                    sellerDTO.setFirstName(resultSet.getString("Prenom"));
+                    sellerDTO.setLastName(resultSet.getString("Nom"));
+                    sellerDTO.setPrice(resultSet.getFloat("Prix"));
+                    sellerDTO.setJobTitle(resultSet.getString("JobTitle"));
+                    sellerDTO.setVille(resultSet.getString("Ville"));
+                    sellerDTO.setPays(resultSet.getString("Pays"));
+                    sellerDTO.setDescription(resultSet.getString("Description"));
+                    sellerDTO.setImagePath(resultSet.getString("ImagePath"));
+                    listSeller.add(sellerDTO);
+                }
             }
+
+            try (ResultSet countResultSet = countStatement.executeQuery()) {
+                if (countResultSet.next()) {
+                    this.noOfRecords = countResultSet.getInt(1);
+                }
+            }
+
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-        return  listSeller;
+        return listSeller;
     }
+
 
     public List<SellerDTO> recentSellers() {
         ConnectionClass connectionClass = new ConnectionClass();

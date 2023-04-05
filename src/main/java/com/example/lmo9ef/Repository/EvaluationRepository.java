@@ -1,7 +1,5 @@
 package com.example.lmo9ef.Repository;
 
-import com.example.lmo9ef.EvaluationServlet;
-import com.example.lmo9ef.Model.DTO.SellerDTO;
 import com.example.lmo9ef.Model.Evaluation;
 import com.example.lmo9ef.Repository.connectivity.ConnectionClass;
 

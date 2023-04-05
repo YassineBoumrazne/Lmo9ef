@@ -1,14 +1,13 @@
-package com.example.lmo9ef;
+package com.example.lmo9ef.Controller;
 
 import com.example.lmo9ef.Model.Categorie;
 import com.example.lmo9ef.Model.DTO.SellerDTO;
-import com.example.lmo9ef.Repository.IndexRepository;
+import com.example.lmo9ef.Repository.SellerRepository;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -16,8 +15,8 @@ import java.util.List;
 public class IndexServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        IndexRepository indexRepository = new IndexRepository();
-        List<Categorie> Categories = indexRepository.getCategories();
+        SellerRepository sellerRepository = new SellerRepository();
+        List<Categorie> Categories = sellerRepository.getCategories();
 
         request.setAttribute("Categories", Categories);
 
@@ -30,10 +29,11 @@ public class IndexServlet extends HttpServlet {
             dispatcher.forward(request, response);
         }
         else{*/
-        List<SellerDTO> recentSellers = indexRepository.recentSellers();
-        List<SellerDTO> bestSellers = indexRepository.bestSellers();
+        List<SellerDTO> recentSellers = sellerRepository.recentSellers();
+        List<SellerDTO> bestSellers = sellerRepository.bestSellers();
         request.setAttribute("recentSellers", recentSellers);
         request.setAttribute("bestSellers", bestSellers);
+        request.setAttribute("Categories", Categories);
         RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
         dispatcher.forward(request, response);
         //}
@@ -46,9 +46,9 @@ public class IndexServlet extends HttpServlet {
 
     private void listUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
-        IndexRepository indexRepository = new IndexRepository();
+        SellerRepository sellerRepository = new SellerRepository();
 
-        List<SellerDTO> listSeller = indexRepository.recentSellers();
+        List<SellerDTO> listSeller = sellerRepository.recentSellers();
         request.setAttribute("listSeller", listSeller);
         RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
         dispatcher.forward(request, response);
