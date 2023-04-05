@@ -13,10 +13,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Finate - Job Portal Website Template Using Bootstrap 5"/>
-    <meta name="keywords" content="accessories, digital products, electronic html, modern, products, responsive"/>
-    <meta name="author" content="hastech"/>
-
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
     <title>Profile</title>
 
     <!--== Favicon ==-->
@@ -150,7 +148,7 @@
                     <div class="col-md-10 col-lg-7 col-xl-12">
                         <div class="login-register-form-wrap register-form-wrap">
                             <div class="login-register-form">
-                                <form method="post" action="update">
+                                <form method="post" action="update" enctype="multipart/form-data">
                                     <div class="py-2">
                                         <div class="row g-4 align-items-center">
                                             <div class="col">

@@ -15,7 +15,7 @@ public class ConnectionClass {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://185.166.188.206:3306/" + dbName + "?useSSL=false",username,password);
+            connection = DriverManager.getConnection("jdbc:mysql://89.117.169.52:3306/" + dbName + "?useSSL=false",username,password);
 
         } catch (SQLException e) {
             throw new RuntimeException("Cannot connect to database", e);

@@ -90,7 +90,7 @@
                         <div class="header-align-end">
                             <div class="header-action-area">
 
-                                <a class="btn-registration" href="sellerRegister"><span>+</span> Inscription</a>
+                                <a class="btn-registration" href="signup.jsp"><span>+</span> Inscription</a>
                                 <button class="btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
                                     <i class="icofont-navigation-menu"></i>
                                 </button>
@@ -106,22 +106,6 @@
     <main class="main-content">
         <!--== Start Page Header Area Wrapper ==-->
         <div class="page-header-area sec-overlay sec-overlay-black" data-bg-img="assets/img/photos/bg2.jpg">
-            <div class="container pt--0 pb--0">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="page-header-content">
-                            <h2 class="title">Login</h2>
-                            <nav class="breadcrumb-area">
-                                <ul class="breadcrumb justify-content-center">
-                                    <li><a href="<%=request.getContextPath()%>/index">Home</a></li>
-                                    <li class="breadcrumb-sep">//</li>
-                                    <li>Pages</li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <!--== End Page Header Area Wrapper ==-->
 
@@ -133,31 +117,29 @@
                         <div class="login-register-form-wrap">
                             <div class="login-register-form">
                                 <div class="form-title">
-                                    <h4 class="title">Se Connecter</h4>
+                                    <h4 class="title">Commander</h4>
                                 </div>
-                                <form  method="post" action="login">
+                                <form  method="post" action="">
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <input class="form-control" type="email" placeholder="Adresse Email" name="Email" id="Email">
+                                                <textarea placeholder="Description de tes besoin..." class="form-control" id="Description" name="Description" rows="4" cols="50"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <input class="form-control" type="password" placeholder="Mot de Passe" name="Password" id="Password">
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <div class="remember-forgot-info">
-                                                    <div class="remember">
-                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                        <label class="form-check-label" for="defaultCheck1">Se souvenir de moi</label>
-                                                    </div>
-                                                    <div class="forgot-password">
-                                                        <a href="#/">Mot de passe oublié?</a>
-                                                    </div>
-                                                </div>
+                                                <select class="form-select" aria-label="Default select example" name="tempRendezVoua" id="tempRendezVoua">
+                                                    <option selected="None">Sélectionner le temps qui vous convient.</option>
+                                                    <option value="">08-09h</option>
+                                                    <option value="">09-10h</option>
+                                                    <option value="">10-11h</option>
+                                                    <option value="">11-12h</option>
+                                                    <option value="">14-15h</option>
+                                                    <option value="">15-16h</option>
+                                                    <option value="">16-17h</option>
+                                                    <option value="">17-18h</option>
+                                                    <option value="">18-19h</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-12">
@@ -167,9 +149,6 @@
                                         </div>
                                     </div>
                                 </form>
-                                <div class="login-register-form-info">
-                                    <p>Vous n'avez pas de compte? <a href="sellerRegister">S'inscrire</a></p>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -290,7 +269,7 @@
                         <ul class="sub-menu">
                             <li><a href="about-us.html">À propos de nous</a></li>
                             <li><a href="signin.jsp">Connexion</a></li>
-                            <li><a href="sellerRegister">Inscription</a></li>
+                            <li><a href="signup.jsp">Inscription</a></li>
                             <li><a href="page-not-found.html">Page non trouvée</a></li>
                         </ul>
                     </li>
