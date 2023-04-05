@@ -150,7 +150,7 @@
                     <div class="col-md-10 col-lg-7 col-xl-12">
                         <div class="login-register-form-wrap register-form-wrap">
                             <div class="login-register-form">
-                                <form method="post" action="update">
+                                <form method="post" action="update" enctype="multipart/form-data">
                                     <div class="py-2">
                                         <div class="row g-4 align-items-center">
                                             <div class="col">
