@@ -80,7 +80,7 @@
                     <ul class="submenu-nav">
                       <li><a href="about-us.html"><span>À propos de nous</span></a></li>
                       <li><a href="signin.jsp"><span>Connexion</span></a></li>
-                      <li><a href="signup.jsp"><span>Inscription</span></a></li>
+                      <li><a href="sellerRegister"><span>Inscription</span></a></li>
                       <li><a href="page-not-found.html"><span>Page non trouvée</span></a></li>
                     </ul>
                   </li>
@@ -90,7 +90,7 @@
             </div>
             <div class="header-align-end">
               <div class="header-action-area">
-                <a class="btn-registration" href="signup.jsp"><span>+</span> Inscription</a>
+                <a class="btn-registration" href="sellerRegister"><span>+</span> Inscription</a>
                 <button class="btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
                   <i class="icofont-navigation-menu"></i>
                 </button>

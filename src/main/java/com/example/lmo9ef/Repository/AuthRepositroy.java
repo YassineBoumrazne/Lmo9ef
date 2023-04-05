@@ -42,7 +42,7 @@ public class AuthRepositroy {
         Connection connection = connectionClass.getConnection();
         int i = 0;
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO seller(Nom, Prenom, Sexe, DateDeNaissance, NumTelephone, Addresse, Email, Password, JobTitle, Prix, Experience) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO seller(Nom, Prenom, Sexe, DateDeNaissance, NumTelephone, Addresse, Email, Password, JobTitle, Prix, Experience, Pays, Ville, Description) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             preparedStatement.setString(1, seller.getLastName());
             preparedStatement.setString(2, seller.getFirstName());
             preparedStatement.setString(3, seller.getSexe());
@@ -54,6 +54,9 @@ public class AuthRepositroy {
             preparedStatement.setString(9, seller.getJobTitle());
             preparedStatement.setFloat(10, seller.getPrice());
             preparedStatement.setString(11, seller.getExperience());
+            preparedStatement.setString(12, seller.getVille());
+            preparedStatement.setString(13, seller.getPays());
+            preparedStatement.setString(14, seller.getDescription());
 
             i = preparedStatement.executeUpdate();
             connection.close();
