@@ -24,7 +24,7 @@ public class BlogServlet extends HttpServlet {
         HttpSession session = request.getSession();
 
         int page = 1;
-        int recordsPerPage = 3;
+        int recordsPerPage = 4;
 
         if (request.getParameter("page") != null)
             page = Integer.parseInt(request.getParameter("page"));

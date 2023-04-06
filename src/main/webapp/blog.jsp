@@ -1,11 +1,11 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
-  User: ABDALLAH
-  Date: 3/15/2023
-  Time: 5:25 PM
+  User: anasStilinski
+  Date: 4/6/2023
+  Time: 10:12 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -16,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content=""/>
     <meta name="keywords" content=""/>
+
     <title>El Moukef</title>
 
     <!--== Favicon ==-->
@@ -158,19 +159,19 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-header-content">
-                            <h2 class="title">Blog Post</h2>
+                            <h2 class="title">Trouver un Maalam</h2>
                             <nav class="breadcrumb-area">
                                 <ul class="breadcrumb justify-content-center">
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="index.html">Accueil</a></li>
                                     <li class="breadcrumb-sep">//</li>
-                                    <li>Blog Post</li>
+                                    <li>Trouver un Maalam</li>
                                 </ul>
                             </nav>
                         </div>
                         <div class="col-12 pt-5">
                             <div class="job-search-wrap">
                                 <div class="job-search-form">
-                                    <form method="get" action="BlogServlet">
+                                    <form method="post" action="BlogServlet">
                                         <div class="row row-gutter-10">
                                             <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
                                             </div>
@@ -196,14 +197,7 @@
                                                     <select class="form-control" name="category" id="category">
                                                         <option value="1" selected>Catégorie</option>
                                                         <c:forEach var="categorie" items="${Categories}">
-                                                            <c:choose>
-                                                                <c:when test="${categorie.getTitle() == pageContext.request.getParameter('category')}">
-                                                                    <option selected value="<c:out value="${categorie.getTitle()}"/>"><c:out value="${categorie.getTitle()}"/></option>
-                                                                </c:when>
-                                                                <c:otherwise>
-                                                                    <option value="<c:out value="${categorie.getTitle()}"/>"><c:out value="${categorie.getTitle()}"/></option>
-                                                                </c:otherwise>
-                                                            </c:choose>
+                                                            <option value="<c:out value="${categorie.getTitle()}"/>"><c:out value="${categorie.getTitle()}"/></option>
                                                         </c:forEach>
                                                     </select>
                                                 </div>
@@ -232,9 +226,9 @@
                         <div class="row row-gutter-70">
                             <div class="row">
                                 <c:forEach var="seller" items="${sellers}">
-                                    <div class="col-md-6 col-lg-4">
+                                    <div class="col-md-6 col-lg-4 col-xl-6">
                                         <!--== Start Recent Job Item ==-->
-                                        <div class="recent-job-item">
+                                        <div class="recent-job-item recent-job-style2-item">
                                             <div class="company-info">
                                                 <div class="logo">
                                                     <a href="<%=request.getContextPath()%>/JobDetails?id=<c:out value="${seller.id}"/>"><img src="<c:out value="${seller.imagePath}"/>" width="75" height="75" alt="Image-HasTech"></a>
@@ -305,102 +299,23 @@
                             <div class="widget-item">
                                 <div class="widget-body">
                                     <div class="widget-search-box">
-                                        <form action="#" method="post">
-                                            <div class="form-input-item">
-                                                <input type="search" id="search2" placeholder="Search here">
-                                                <button type="submit" class="btn-src">
-                                                    <i class="icofont-search"></i>
-                                                </button>
-                                            </div>
-                                        </form>
+
                                     </div>
                                 </div>
                             </div>
                             <div class="widget-item">
                                 <div class="widget-title">
-                                    <h3 class="title">Post Category</h3>
+                                    <h3 class="title">Catégorie</h3>
                                 </div>
                                 <div class="widget-body">
                                     <div class="widget-categories">
                                         <ul>
-                                            <li><a href="job.html">Commercial Movers<span>(16)</span></a></li>
-                                            <li><a href="job.html">Air Freight Services<span>(03)</span></a></li>
-                                            <li><a href="job.html">Drone Services<span>(08)</span></a></li>
-                                            <li><a href="job.html">Road Freight<span>(18)</span></a></li>
-                                            <li><a href="job.html">Warehousing<span>(02)</span></a></li>
-                                            <li><a href="job.html">Consulting Storage<span>(14)</span></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="widget-item">
-                                <div class="widget-title">
-                                    <h3 class="title">Recent Post</h3>
-                                </div>
-                                <div class="widget-body">
-                                    <div class="widget-post">
-                                        <div class="widget-blog-post">
-                                            <div class="thumb">
-                                                <a href="blog-details.html"><img src="assets/img/blog/s1.jpg" alt="Image" width="71" height="70"></a>
-                                            </div>
-                                            <div class="content">
-                                                <h4><a href="blog-details.html">This includes shipment <br>of raw materials.</a></h4>
-                                                <div class="meta">
-                                                    <span class="post-date"><i class="icofont-ui-calendar"></i> 10 August, 2021</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="widget-blog-post">
-                                            <div class="thumb">
-                                                <a href="blog-details.html"><img src="assets/img/blog/s2.jpg" alt="Image" width="71" height="70"></a>
-                                            </div>
-                                            <div class="content">
-                                                <h4><a href="blog-details.html">All of these amazing <br>features come price.</a></h4>
-                                                <div class="meta">
-                                                    <span class="post-date"><i class="icofont-ui-calendar"></i> 18 August, 2021</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="widget-blog-post">
-                                            <div class="thumb">
-                                                <a href="blog-details.html"><img src="assets/img/blog/s3.jpg" alt="Image" width="71" height="70"></a>
-                                            </div>
-                                            <div class="content">
-                                                <h4><a href="blog-details.html">This includes shipment <br>of raw materials.</a></h4>
-                                                <div class="meta">
-                                                    <span class="post-date"><i class="icofont-ui-calendar"></i> 19 August, 2021</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="widget-blog-post">
-                                            <div class="thumb">
-                                                <a href="blog-details.html"><img src="assets/img/blog/s4.jpg" alt="Image" width="71" height="70"></a>
-                                            </div>
-                                            <div class="content">
-                                                <h4><a href="blog-details.html">All of these amazing <br>features come price.</a></h4>
-                                                <div class="meta">
-                                                    <span class="post-date"><i class="icofont-ui-calendar"></i> 10 August, 2021</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="widget-item mb-md-0">
-                                <div class="widget-title">
-                                    <h3 class="title">Popular Tags</h3>
-                                </div>
-                                <div class="widget-body">
-                                    <div class="widget-tags">
-                                        <ul>
-                                            <li><a href="job.html">Animal</a></li>
-                                            <li><a class="tags-padding mr-0" href="job.html">Bird’s</a></li>
-                                            <li><a class="tags-padding" href="job.html">Charity</a></li>
-                                            <li><a class="mr-0" href="job.html">Forest</a></li>
-                                            <li><a href="job.html">Water</a></li>
-                                            <li><a class="tags-padding mr-0" href="job.html">Children</a></li>
-                                            <li><a class="tags-padding" href="job.html">Human</a></li>
-                                            <li><a href="job.html">Jungle</a></li>
+                                            <li><a href="job.html">Plomberie  <span>(305)</span></a></li>
+                                            <li><a href="job.html">Electricité / Eclairage <span>(95)</a></li>
+                                            <li><a href="job.html">Peinture / Décoration <span>(212)</span></a></li>
+                                            <li><a href="job.html">Maçonnerie / Brique <span>(93)</span></a></li>
+                                            <li><a href="job.html">Jardinage / Paysagisme <span>(450)</span></a></li>
+                                            <li><a href="job.html">Electricité / Eclairage <span>(95)</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -415,28 +330,6 @@
 
     <!--== Start Footer Area Wrapper ==-->
     <footer class="footer-area">
-        <!--== Start Footer Top ==-->
-        <div class="footer-top">
-            <div class="container pt--0 pb--0">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <div class="footer-newsletter-content">
-                            <h4 class="title">Subscribe for everyday job newsletter.</h4>
-                        </div>
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="footer-newsletter-form">
-                            <form action="#">
-                                <input type="email" placeholder="Enter your email">
-                                <button type="submit" class="btn-newsletter">Subscribe Now</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--== End Footer Top ==-->
-
         <!--== Start Footer Main ==-->
         <div class="footer-main">
             <div class="container pt--0 pb--0">
@@ -581,7 +474,7 @@
                         <ul class="sub-menu">
                             <li><a href="blog-grid.html">Blog Grid</a></li>
                             <li><a href="blog.html">Blog Left Sidebar</a></li>
-                            <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                            <li><a href="blog-right-sidebar.jsp">Blog Right Sidebar</a></li>
                             <li><a href="blog-details.html">Blog Details</a></li>
                         </ul>
                     </li>
