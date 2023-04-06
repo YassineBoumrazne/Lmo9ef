@@ -171,7 +171,7 @@
                         <div class="col-12 pt-5">
                             <div class="job-search-wrap">
                                 <div class="job-search-form">
-                                    <form method="post" action="BlogServlet">
+                                    <form method="get" action="BlogServlet">
                                         <div class="row row-gutter-10">
                                             <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
                                             </div>
@@ -197,7 +197,14 @@
                                                     <select class="form-control" name="category" id="category">
                                                         <option value="1" selected>Catégorie</option>
                                                         <c:forEach var="categorie" items="${Categories}">
-                                                            <option value="<c:out value="${categorie.getTitle()}"/>"><c:out value="${categorie.getTitle()}"/></option>
+                                                            <c:choose>
+                                                                <c:when test="${categorie.getTitle() == pageContext.request.getParameter('category')}">
+                                                                    <option selected value="<c:out value="${categorie.getTitle()}"/>"><c:out value="${categorie.getTitle()}"/></option>
+                                                                </c:when>
+                                                                <c:otherwise>
+                                                                    <option value="<c:out value="${categorie.getTitle()}"/>"><c:out value="${categorie.getTitle()}"/></option>
+                                                                </c:otherwise>
+                                                            </c:choose>
                                                         </c:forEach>
                                                     </select>
                                                 </div>

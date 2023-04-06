@@ -21,7 +21,6 @@ public class BlogServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         SellerRepository sellerRepository = new SellerRepository();
-        HttpSession session = request.getSession();
 
         int page = 1;
         int recordsPerPage = 4;
@@ -51,32 +50,4 @@ public class BlogServlet extends HttpServlet {
         view.forward(request, response);
 
     }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /*doGet(request, response);
-
-        SellerRepository sellerRepository = new SellerRepository();
-        HttpSession session = request.getSession(true);
-
-        String category = request.getParameter("category");
-        String city = request.getParameter("city");
-
-        List<Categorie> Categories = sellerRepository.getCategories();
-        List<SellerDTO> sellers = sellerRepository.SellersSearch(category, city, 1, 3);
-        int numberOfRecords = sellerRepository.getNoOfRecords();
-        int numberOfPages = (int)Math.ceil(numberOfRecords * 1.0 / 3);
-
-        session.setAttribute("category", category);
-        session.setAttribute("city", city);
-
-        request.setAttribute("sellers", sellers);
-        request.setAttribute("Categories", Categories);
-        request.setAttribute("noOfPages", numberOfPages);
-        request.setAttribute("currentPage", 1);
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher("blog.jsp");
-        dispatcher.include(request, response);*/
-    }
-
 }
