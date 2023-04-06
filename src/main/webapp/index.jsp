@@ -171,7 +171,7 @@
                                     <div class="col-12">
                                         <div class="job-search-wrap">
                                             <div class="job-search-form">
-                                                <form method="post" action="BlogServlet">
+                                                <form method="get" action="BlogServlet">
                                                     <div class="row row-gutter-10">
                                                         <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
                                                             <div class="form-group">

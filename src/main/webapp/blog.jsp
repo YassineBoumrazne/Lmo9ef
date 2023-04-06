@@ -170,7 +170,7 @@
                         <div class="col-12 pt-5">
                             <div class="job-search-wrap">
                                 <div class="job-search-form">
-                                    <form method="post" action="BlogServlet">
+                                    <form method="get" action="BlogServlet">
                                         <div class="row row-gutter-10">
                                             <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
                                             </div>
@@ -178,11 +178,16 @@
                                                 <div class="form-group">
                                                     <select class="form-control" name="city" id="city">
                                                         <option value="1" selected>Ville</option>
-                                                        <option value="Agadir">Agadir</option>
-                                                        <option value="Safi">Safi</option>
-                                                        <option value="Taroudant">Taroudant</option>
-                                                        <option value="Casablanca">Casablanca</option>
-                                                        <option value="Rabat">Rabat</option>
+                                                        <c:forEach var="city" items="${cities}">
+                                                            <c:choose>
+                                                                <c:when test="${city == pageContext.request.getParameter('city')}">
+                                                                    <option selected value="<c:out value="${city}"/>"><c:out value="${city}"/></option>
+                                                                </c:when>
+                                                                <c:otherwise>
+                                                                    <option value="<c:out value="${city}"/>"><c:out value="${city}"/></option>
+                                                                </c:otherwise>
+                                                            </c:choose>
+                                                        </c:forEach>
                                                     </select>
                                                 </div>
                                             </div>
@@ -191,7 +196,14 @@
                                                     <select class="form-control" name="category" id="category">
                                                         <option value="1" selected>Catégorie</option>
                                                         <c:forEach var="categorie" items="${Categories}">
-                                                            <option value="<c:out value="${categorie.getTitle()}"/>"><c:out value="${categorie.getTitle()}"/></option>
+                                                            <c:choose>
+                                                                <c:when test="${categorie.getTitle() == pageContext.request.getParameter('category')}">
+                                                                    <option selected value="<c:out value="${categorie.getTitle()}"/>"><c:out value="${categorie.getTitle()}"/></option>
+                                                                </c:when>
+                                                                <c:otherwise>
+                                                                    <option value="<c:out value="${categorie.getTitle()}"/>"><c:out value="${categorie.getTitle()}"/></option>
+                                                                </c:otherwise>
+                                                            </c:choose>
                                                         </c:forEach>
                                                     </select>
                                                 </div>
@@ -256,7 +268,7 @@
                                         <ul class="page-numbers d-inline-flex">
                                             <c:if test="${currentPage != 1}">
                                                 <li>
-                                                    <a class="page-number previous" href="BlogServlet?page=${currentPage - 1}"><i class="icofont-long-arrow-left"></i></a>
+                                                    <a class="page-number previous" href="BlogServlet?city=${pageContext.request.getParameter("city")}&category=${pageContext.request.getParameter("category")}&page=${currentPage - 1}"><i class="icofont-long-arrow-left"></i></a>
                                                 </li>
                                             </c:if>
 
@@ -269,7 +281,7 @@
                                                     </c:when>
                                                     <c:otherwise>
                                                         <li>
-                                                            <a class="page-number" href="BlogServlet?page=${i}">${i}</a>
+                                                            <a class="page-number" href="BlogServlet?city=${pageContext.request.getParameter("city")}&category=${pageContext.request.getParameter("category")}&page=${i}">${i}</a>
                                                         </li>
                                                     </c:otherwise>
                                                 </c:choose>
@@ -277,7 +289,7 @@
 
                                             <c:if test="${currentPage lt noOfPages}">
                                                 <li>
-                                                    <a class="page-number next" href="BlogServlet?page=${currentPage + 1}"><i class="icofont-long-arrow-right"></i></a>
+                                                    <a class="page-number next" href="BlogServlet?city=${pageContext.request.getParameter("city")}&category=${pageContext.request.getParameter("category")}&page=${currentPage + 1}"><i class="icofont-long-arrow-right"></i></a>
                                                 </li>
 
                                             </c:if>

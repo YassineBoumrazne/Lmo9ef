@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "BlogServlet", value = "/BlogServlet")
@@ -28,8 +29,14 @@ public class BlogServlet extends HttpServlet {
         if (request.getParameter("page") != null)
             page = Integer.parseInt(request.getParameter("page"));
 
-        List<SellerDTO> sellers = sellerRepository.SellersSearch((String) session.getAttribute("category") ,(String) session.getAttribute("city"), (page - 1) * recordsPerPage, recordsPerPage);
+        List<SellerDTO> sellers = sellerRepository.SellersSearch((String) request.getParameter("category") ,(String) request.getParameter("city"), (page - 1) * recordsPerPage, recordsPerPage);
         List<Categorie> Categories = sellerRepository.getCategories();
+        List<String> cities = new ArrayList<>();
+        cities.add("Agadir");
+        cities.add("Safi");
+        cities.add("Taroudant");
+        cities.add("Casablanca");
+        cities.add("Rabat");
 
         int numberOfRecords = sellerRepository.getNoOfRecords();
         int numberOfPages = (int)Math.ceil(numberOfRecords * 1.0 / recordsPerPage);
@@ -38,6 +45,7 @@ public class BlogServlet extends HttpServlet {
         request.setAttribute("noOfPages", numberOfPages);
         request.setAttribute("currentPage", page);
         request.setAttribute("Categories", Categories);
+        request.setAttribute("cities", cities);
 
         RequestDispatcher view = request.getRequestDispatcher("blog.jsp");
         view.forward(request, response);
@@ -46,7 +54,7 @@ public class BlogServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+        /*doGet(request, response);
 
         SellerRepository sellerRepository = new SellerRepository();
         HttpSession session = request.getSession(true);
@@ -68,7 +76,7 @@ public class BlogServlet extends HttpServlet {
         request.setAttribute("currentPage", 1);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("blog.jsp");
-        dispatcher.include(request, response);
+        dispatcher.include(request, response);*/
     }
 
 }
