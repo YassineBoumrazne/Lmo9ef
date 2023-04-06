@@ -10,7 +10,7 @@ import java.util.Properties;
 
 public class JavaMails {
 
-    public void sendEmailNotifation(String customerFirstName, String customerLastName,String sellerEmail){
+    public void sendEmailNotifation(String customerFullName, String sellerEmail, String description, String tempRendezVous, String sellerFullName){
 
         String username = "lmo9ef@gmail.com";
         String password = "qvfhcfherclykaio";
@@ -36,9 +36,16 @@ public class JavaMails {
 
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("lmo9ef@gmail.com"));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("yassine.loccase@gmail.com"));
-            message.setSubject("Test Email");
-            message.setText("There is a new commande From " + customerFirstName + " " + customerLastName + " Bruh Fjij kkaa");
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(sellerEmail));
+            message.setSubject("New Order Received");
+            message.setText("Dear "+ sellerFullName +",\n" +
+                    "\n" +
+                    "I hope this email finds you well. I am writing to inform you that you have received a new order from "+ customerFullName +", and they have provided the following description of their requirements: "+ description +".\n" +
+                    "\n" +
+                    "The customer has also provided a preferred date and time for the appointment through our scheduling platform, "+ tempRendezVous +".\n" +
+                    "\n" +
+                    "Best regards,\n" +
+                    "El Moukef");
 
             // Send the email
             Transport.send(message);

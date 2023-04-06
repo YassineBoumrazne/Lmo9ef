@@ -32,7 +32,7 @@ public class CommandeServlet extends HttpServlet {
 
             int sellerId = Integer.parseInt(request.getParameter("sellerId"));
             String Description = request.getParameter("description");
-            String tempRendezVoua = request.getParameter("tempRendezVoua");
+            String tempRendezVous = request.getParameter("tempRendezVoua");
             User logedInUser = (User) request.getSession().getAttribute("loggedInUser");
             if(logedInUser == null){
                 response.sendRedirect("signin.jsp");
@@ -46,10 +46,10 @@ public class CommandeServlet extends HttpServlet {
             order.setEtat(Etat.en_attente);
             order.setSellerId(sellerId);
             order.setDescription(Description);
-            order.setDateDeDebut(tempRendezVoua);
+            order.setDateDeDebut(tempRendezVous);
 
             orderRepository.commander(order);
-            javaMails.sendEmailNotifation(logedInUser.getFirstName(), logedInUser.getLastName(), seller.getEmail());
+            javaMails.sendEmailNotifation(logedInUser.getFirstName()+" "+logedInUser.getLastName(), seller.getEmail(), Description, tempRendezVous, seller.getFirstName()+" "+seller.getLastName());
             response.sendRedirect("index");
         }
         catch(Exception ex){
