@@ -5,6 +5,7 @@
   Time: 10:21 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -119,26 +120,27 @@
                                 <div class="form-title">
                                     <h4 class="title">Commander</h4>
                                 </div>
-                                <form  method="post" action="">
+                                <form  method="post" action="Commande">
+                                    <input name="sellerId" hidden="hidden" value="<c:out value="${sellerId}"/>">
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <textarea placeholder="Description de tes besoin..." class="form-control" id="Description" name="Description" rows="4" cols="50"></textarea>
+                                                <textarea placeholder="Description de tes besoin..." class="form-control" id="Description" name="description" rows="4" cols="50"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <select class="form-select" aria-label="Default select example" name="tempRendezVoua" id="tempRendezVoua">
-                                                    <option selected="None">Sélectionner le temps qui vous convient.</option>
-                                                    <option value="">08-09h</option>
-                                                    <option value="">09-10h</option>
-                                                    <option value="">10-11h</option>
-                                                    <option value="">11-12h</option>
-                                                    <option value="">14-15h</option>
-                                                    <option value="">15-16h</option>
-                                                    <option value="">16-17h</option>
-                                                    <option value="">17-18h</option>
-                                                    <option value="">18-19h</option>
+                                                    <option selected="None" value="">Sélectionner le temps qui vous convient.</option>
+                                                    <option value="08-09h">08-09h</option>
+                                                    <option value="09-10h">09-10h</option>
+                                                    <option value="10-11h">10-11h</option>
+                                                    <option value="11-12h">11-12h</option>
+                                                    <option value="14-15h">14-15h</option>
+                                                    <option value="15-16h">15-16h</option>
+                                                    <option value="16-17h">16-17h</option>
+                                                    <option value="17-18h">17-18h</option>
+                                                    <option value="18-19h">18-19h</option>
                                                 </select>
                                             </div>
                                         </div>

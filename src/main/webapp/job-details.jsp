@@ -144,7 +144,7 @@
               </div>
               <div class="job-details-price">
                 <h4 class="title"><c:out value="${seller.price}"/>DH <span>/Jour</span></h4>
-                <form action="JobDetails" method="post">
+                <form action="Commande" method="get">
                   <input name="sellerId" hidden="hidden" value="<c:out value="${seller.id}"/>">
                   <button type="submit" class="btn-theme">Commander</button>
                 </form>
@@ -167,7 +167,7 @@
               </div>
 
               <div class="content">
-                <a class="btn-apply-now" href="contact.html">Commander <i class="icofont-long-arrow-right"></i></a>
+                <a class="btn-apply-now" href="Commande?sellerId=${seller.id}">Commander <i class="icofont-long-arrow-right"></i></a>
               </div>
             </div>
           </div>

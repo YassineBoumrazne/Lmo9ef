@@ -9,7 +9,7 @@ public class Order {
     private Date dateDeCommand;
     private float prix;
     private Date deleveryDate;
-    private Date dateDeDebut;
+    private String dateDeDebut;
     private Date dateDeFin;
     private String description;
     private Etat etat;
@@ -45,11 +45,11 @@ public class Order {
         this.deleveryDate = deleveryDate;
     }
 
-    public Date getDateDeDebut() {
+    public String getDateDeDebut() {
         return dateDeDebut;
     }
 
-    public void setDateDeDebut(Date dateDeDebut) {
+    public void setDateDeDebut(String dateDeDebut) {
         this.dateDeDebut = dateDeDebut;
     }
 
