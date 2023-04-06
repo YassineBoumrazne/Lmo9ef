@@ -50,32 +50,6 @@ public class JobDetailsServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //test
-        try{
-            OrderRepository orderRepository = new OrderRepository();
-            SellerRepository sellerRepository = new SellerRepository();
-            JavaMails javaMails = new JavaMails();
 
-            int sellerId = Integer.parseInt(request.getParameter("sellerId"));
-            User logedInUser = (User) request.getSession().getAttribute("loggedInUser");
-            if(logedInUser == null){
-                response.sendRedirect("signin.jsp");
-                return;
-            }
-            SellerDTO seller = sellerRepository.getSeller(sellerId);
-
-            Order order = new Order();
-            order.setPrix(seller.getPrice());
-            order.setBuyerId((logedInUser).getId());
-            order.setEtat(Etat.en_attente);
-            order.setSellerId(sellerId);
-
-            orderRepository.commander(order);
-            javaMails.sendEmailNotifation(logedInUser.getFirstName(), logedInUser.getLastName(), seller.getEmail());
-            response.sendRedirect("index");
-        }
-        catch(Exception ex){
-
-        }
     }
 }

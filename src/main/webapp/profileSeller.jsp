@@ -450,7 +450,7 @@
                         <ul class="sub-menu">
                             <li><a href="about-us.html">À propos de nous</a></li>
                             <li><a href="signin.jsp">Connexion</a></li>
-                            <li><a href="signup.jsp">Inscription</a></li>
+                            <li><a href="sellerRegister">Inscription</a></li>
                             <li><a href="page-not-found.html">Page non trouvée</a></li>
                         </ul>
                     </li>

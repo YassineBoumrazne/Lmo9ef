@@ -13,16 +13,18 @@ public class OrderRepository {
         Connection connection = connectionClass.getConnection();
         int i = 0;
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO `Order`(DateDeCommand, Prix, BuyerId, SellerId, Etat)VALUES (?,?,?,?,?)");
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO `Order`(DateDeCommand, Prix, BuyerId, SellerId, Etat, Description, DateDeDebut)VALUES (?,?,?,?,?,?,?)");
             preparedStatement.setTimestamp(1, Timestamp.valueOf(LocalDateTime.now()));
             preparedStatement.setFloat(2, order.getPrix());
             preparedStatement.setInt(3, order.getBuyerId());
             preparedStatement.setInt(4, order.getSellerId());
             preparedStatement.setString(5, order.getEtat().name());
+            preparedStatement.setString(6, order.getDescription());
+            preparedStatement.setString(7, order.getDateDeDebut());
 
             i = preparedStatement.executeUpdate();
             connection.close();
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
         return i;

@@ -21,6 +21,16 @@ public class Seller extends User {
         this.Description  = Description;
         this.WorkingTime  = WorkingTime;
     }
+
+    public Seller(String name, String firstName, String sexe, String birthDay, String phoneNumber, String address, String email, String password, String jobTitle, float price, String experience, String Ville, String Pays, String Description) {
+        super(name, firstName, sexe, birthDay, phoneNumber, address, email, password, Pays, Ville,"ImagePath");
+        this.jobTitle = jobTitle;
+        this.price = price;
+        this.experience = experience;
+        this.Ville        = Ville;
+        this.Pays         = Pays;
+        this.Description  = Description;
+    }
     public Seller(){
         this(0,"LastName","","","","","","","","",100,"","","","","","");
     }

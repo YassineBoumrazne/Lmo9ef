@@ -25,6 +25,7 @@ public class CustomerRegistreServlet extends HttpServlet {
         try {
             int i = authRepositroy.customerRegister(customer);
             if(i == 1){
+                response.sendRedirect("Profile");
                 out.println("Working...");
                 out.println("Registred  Successfuly...");
             }else{

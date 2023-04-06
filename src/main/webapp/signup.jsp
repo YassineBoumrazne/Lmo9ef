@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: anasStilinski
@@ -260,7 +261,32 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form-group">
+                                                        <input class="form-control" type="text" placeholder="Price"  id="price" name="price">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <select class="form-control" name="category" id="category">
+                                                            <option value="category">category</option>
+                                                            <c:forEach var="categorie" items="${Categories}">
+                                                                <option value="<c:out value="${categorie.getTitle()}"/>"><c:out value="${categorie.getTitle()}"/></option>
+                                                            </c:forEach>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
                                                         <input class="form-control" type="date" id="DateDeNaissanceMaalam" name="DateDeNaissance">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="text" placeholder="Experience" id="Experience" name="Experience">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="text" id="description" placeholder="description" name="description">
                                                     </div>
                                                 </div>
                                                 <div class="col-12">

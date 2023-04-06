@@ -90,7 +90,7 @@
                         <div class="header-align-end">
                             <div class="header-action-area">
 
-                                <a class="btn-registration" href="signup.jsp"><span>+</span> Inscription</a>
+                                <a class="btn-registration" href="sellerRegister"><span>+</span> Inscription</a>
                                 <button class="btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
                                     <i class="icofont-navigation-menu"></i>
                                 </button>
@@ -168,7 +168,7 @@
                                     </div>
                                 </form>
                                 <div class="login-register-form-info">
-                                    <p>Vous n'avez pas de compte? <a href="signup.jsp">S'inscrire</a></p>
+                                    <p>Vous n'avez pas de compte? <a href="sellerRegister">S'inscrire</a></p>
                                 </div>
                             </div>
                         </div>
@@ -290,7 +290,7 @@
                         <ul class="sub-menu">
                             <li><a href="about-us.html">À propos de nous</a></li>
                             <li><a href="signin.jsp">Connexion</a></li>
-                            <li><a href="signup.jsp">Inscription</a></li>
+                            <li><a href="sellerRegister">Inscription</a></li>
                             <li><a href="page-not-found.html">Page non trouvée</a></li>
                         </ul>
                     </li>

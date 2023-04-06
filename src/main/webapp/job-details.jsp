@@ -78,7 +78,7 @@
                     <ul class="submenu-nav">
                       <li><a href="about-us.html"><span>À propos de nous</span></a></li>
                       <li><a href="signin.jsp"><span>Connexion</span></a></li>
-                      <li><a href="signup.jsp"><span>Inscription</span></a></li>
+                      <li><a href="sellerRegister"><span>Inscription</span></a></li>
                       <li><a href="page-not-found.html"><span>Page non trouvée</span></a></li>
                     </ul>
                   </li>
@@ -88,7 +88,7 @@
             </div>
             <div class="header-align-end">
               <div class="header-action-area">
-                <a class="btn-registration" href="signup.jsp"><span>+</span> Inscription</a>
+                <a class="btn-registration" href="sellerRegister"><span>+</span> Inscription</a>
                 <button class="btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
                   <i class="icofont-navigation-menu"></i>
                 </button>
@@ -144,7 +144,7 @@
               </div>
               <div class="job-details-price">
                 <h4 class="title"><c:out value="${seller.price}"/>DH <span>/Jour</span></h4>
-                <form action="JobDetails" method="post">
+                <form action="Commande" method="get">
                   <input name="sellerId" hidden="hidden" value="<c:out value="${seller.id}"/>">
                   <button type="submit" class="btn-theme">Commander</button>
                 </form>
@@ -167,7 +167,7 @@
               </div>
 
               <div class="content">
-                <a class="btn-apply-now" href="contact.html">Commander <i class="icofont-long-arrow-right"></i></a>
+                <a class="btn-apply-now" href="Commande?sellerId=${seller.id}">Commander <i class="icofont-long-arrow-right"></i></a>
               </div>
             </div>
           </div>

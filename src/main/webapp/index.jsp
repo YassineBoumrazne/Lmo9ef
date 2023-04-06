@@ -82,7 +82,7 @@
                                         <ul class="submenu-nav">
                                             <li><a href="about-us.html"><span>À propos de nous</span></a></li>
                                             <li><a href="signin.jsp"><span>Connexion</span></a></li>
-                                            <li><a href="signup.jsp"><span>Inscription</span></a></li>
+                                            <li><a href="sellerRegister"><span>Inscription</span></a></li>
                                             <li><a href="page-not-found.html"><span>Page non trouvée</span></a></li>
                                         </ul>
                                     </li>
@@ -132,7 +132,7 @@
                                     // the user is not logged in
                                     // redirect to the login page or show an error message
                                 %>
-                                <a class="btn-registration" href="signup.jsp"><span>+</span> Inscription</a>
+                                <a class="btn-registration" href="sellerRegister"><span>+</span> Inscription</a>
                                 <button class="btn-menu" type="button" data-bs-toggle="offcanvas"
                                         data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
                                     <i class="icofont-navigation-menu"></i>
@@ -881,7 +881,7 @@
                         <ul class="sub-menu">
                             <li><a href="about-us.html">À propos de nous</a></li>
                             <li><a href="login.html">Connexion</a></li>
-                            <li><a href="signup.jsp">Inscription</a></li>
+                            <li><a href="sellerRegister">Inscription</a></li>
                             <li><a href="page-not-found.html">Page non trouvée</a></li>
                         </ul>
                     </li>
